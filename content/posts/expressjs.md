@@ -53,17 +53,17 @@ Next up lets install express with npm so we have access to it in our application
 
 ```javascript
 // index.js
-const express = require('express')
+const express = require('express');
 
-const app = express()
+const app = express();
 
 app.get('/', (req, res) => {
-  res.send('root path')
-})
+  res.send('root path');
+});
 
 app.listen(3000, () => {
-  console.log('listening on port 3000')
-})
+  console.log('listening on port 3000');
+});
 ```
 
 The run down:

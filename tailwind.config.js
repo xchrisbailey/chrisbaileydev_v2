@@ -9,10 +9,31 @@ module.exports = {
       colors: {
         'accent-1': '#333',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.purple.700'),
+              '&:hover': {
+                color: theme('colors.purple.900'),
+              },
+            },
+            h1: {
+              color: theme('colors.purple.700'),
+              textTransform: 'uppercase',
+            },
+          },
+        },
+        dark: {
+          css: {
+            color: theme('colors.white'),
+          },
+        },
+      }),
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

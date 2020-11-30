@@ -1,13 +1,13 @@
+import Link from 'next/link';
+
 export default function Nav() {
   return (
     <nav className="flex px-5 py-5 font-semibold bg-gray-100 dark:bg-gray-900 shadow-md justify-between items-center">
-      <a
-        href="#"
-        className="text-xl uppercase text-purple-600 dark:text-purple-200 dark:hover:text-purple-400"
-      >
-        chris bailey dev
-      </a>
-
+      <Link href="/">
+        <a className="text-xl uppercase text-purple-600 dark:text-purple-200 dark:hover:text-purple-400">
+          chris bailey dev
+        </a>
+      </Link>
       <div className="flex space-x-4">
         <div className="flex p-0 m-0 items-center justify-start px-3 py-2">
           <svg
@@ -15,7 +15,7 @@ export default function Nav() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-4 w-4 mr-1"
+            className="h-4 w-4 mr-1 dark:text-white"
           >
             <path
               strokeLinecap="round"
@@ -37,7 +37,7 @@ export default function Nav() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-4 w-4 mr-1"
+            className="h-4 w-4 mr-1 dark:text-white"
           >
             <path
               strokeLinecap="round"
@@ -60,7 +60,7 @@ export default function Nav() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-4 w-4 mr-1"
+            className="h-4 w-4 mr-1 dark:text-white"
           >
             <path
               strokeLinecap="round"

@@ -3,13 +3,15 @@ import dayjs from 'dayjs';
 
 export const ListItem = ({ item }) => {
   return (
-    <div className="my-1 p-3 rounded-sm bg-gray-50 hover:bg-gray-100 flex justify-between">
-      <Link href={`/posts/${item.slug}`}>
-        <a className="text-purple-700 hover:text-purple-900 hover:underline">
-          {item.title}
+    <div className="my-1 p-3 rounded-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 flex justify-between">
+      <Link href={`/posts/${item.meta.slug}`}>
+        <a className="text-purple-700 hover:text-purple-900 dark:text-purple-400 dark:hover:text-purple-500 hover:underline">
+          {item.meta.title}
         </a>
       </Link>
-      <p>{dayjs(item.date).format('DD/MM/YYYY')}</p>
+      <p className="text-black dark:text-white">
+        {dayjs(item.meta.date).format('MM/DD/YYYY')}
+      </p>
     </div>
   );
 };

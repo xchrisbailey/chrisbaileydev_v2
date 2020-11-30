@@ -20,7 +20,7 @@ It fixes/fixed the broken DOM API when originally released. It's shorter, cleare
 
 ### Why not use jQuery
 
-The DOM API is no longer broken, things like `js•.querySelector` and `js•.querySelectorAll` now exist in the DOM API so jQuerys use case here is voided. It doesn't do anything you can't do on your own; it's heavy for small use cases like animation when you can find lighter libraries to handle these for you.
+The DOM API is no longer broken, things like `.querySelector` and `.querySelectorAll` now exist in the DOM API so jQuerys use case here is voided. It doesn't do anything you can't do on your own; it's heavy for small use cases like animation when you can find lighter libraries to handle these for you.
 
 Either way, it's worth knowing. Having the knowledge is useful because many places still use it and having that (or any additional) skill in your quiver will always be helpful.
 
@@ -42,29 +42,29 @@ Including jQuery in your project is as simple as linking any JavaScript file:
 
 ### selecting and css with jQuery
 
-`js•$("selectorGoesHere")` much like `js•.querySelectorAll` is used as our method for selecting all types of an element. Once selected we have the option of using `js•.css(property, value)` for changing the style on the selected elements.
+`$("selectorGoesHere")` much like `.querySelectorAll` is used as our method for selecting all types of an element. Once selected we have the option of using `.css(property, value)` for changing the style on the selected elements.
 
 ### methods
 
-`js•.text()` return same content as `js•.textContent()` would in vanilla JavaScript, all of the text (including html tags) inside of a selected element. It also allows you to write new content into the element, but cannot input html code.
+`.text()` return same content as `.textContent()` would in vanilla JavaScript, all of the text (including html tags) inside of a selected element. It also allows you to write new content into the element, but cannot input html code.
 
-`js•.html()` same as `js•.text()` except you can now include html code into the new content add through the `js•.html()` method.
+`.html()` same as `.text()` except you can now include html code into the new content add through the `.html()` method.
 
-`js•.attr()` allows us to retrieve an attribute and/or set it. and example would be changing the `js•src` attribute of an `js•img` tag like so `js•$("img").attr("src", "http://fake.img/new.png");`
-`js•.val()` returns value of a selected element. Can also be used to set value of an element.
+`.attr()` allows us to retrieve an attribute and/or set it. and example would be changing the `src` attribute of an `img` tag like so `$("img").attr("src", "http://fake.img/new.png");`
+`.val()` returns value of a selected element. Can also be used to set value of an element.
 
-`js•.addClass()` `js•.removeClass()` `js•.toggleClass()` self explanatory here; add, remove or toggle a class on a selected element or group of elements.
+`.addClass()` `.removeClass()` `.toggleClass()` self explanatory here; add, remove or toggle a class on a selected element or group of elements.
 
 ## Events
 
-`js•.click(function())` how too quickly and easily add click listener to an element or group of elements.
+`.click(function())` how too quickly and easily add click listener to an element or group of elements.
 
-NOTE: when using on group of objects when referring to clicked item in the function you will need to use the jQuery version of `js•this` which is just `js•$(this)` . This goes for any instance of when you'll want to use a jQuery method on `js•this` .
+NOTE: when using on group of objects when referring to clicked item in the function you will need to use the jQuery version of `this` which is just `$(this)` . This goes for any instance of when you'll want to use a jQuery method on `this` .
 
-`js•.keypress()` is a way to add a keypress event listener to an element, `js•.keydown()` and `js•.keyup()` also exist. Down fires when you press a button, up fires when released, and press fires in-between key down and key up usually.
+`.keypress()` is a way to add a keypress event listener to an element, `.keydown()` and `.keyup()` also exist. Down fires when you press a button, up fires when released, and press fires in-between key down and key up usually.
 
-`js•.on()` works similarly to `js•.addEvenListener` by allowing you specify a type of event to listen for. `js•.on("click"` will also be more useful than `js•.click()` most of the time due to it also working for elements that also ready exist, plus those that do not at time of page loading...
+`.on()` works similarly to `.addEvenListener` by allowing you specify a type of event to listen for. `.on("click"` will also be more useful than `.click()` most of the time due to it also working for elements that also ready exist, plus those that do not at time of page loading...
 
 ## Effects
 
-`js•.fadeOut() .fadeIn() .fadeToggle()` fade out/in/toggle an element, and gives the option to add a speed, and callback.
+`.fadeOut() .fadeIn() .fadeToggle()` fade out/in/toggle an element, and gives the option to add a speed, and callback.

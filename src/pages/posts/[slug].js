@@ -1,39 +1,56 @@
-import matter from 'gray-matter';
-import ReactMarkdown from 'react-markdown';
-import SyntaxHighlighter from 'react-syntax-highlighter';
+import Head from 'next/head';
+
+import { getAllPosts, getPostBySlug } from '../../lib/posts';
+import markdownToHtml from '../../lib/markdown';
 
 import Nav from '../../components/nav';
 
-const PostTemplate = ({ content, data }) => {
+const PostTemplate = ({ post }) => {
   return (
     <>
-      <Nav />
-      <div className="container mx-auto">
-        <h1>{data.title}</h1>
-        <ReactMarkdown
-          escapeHtml={true}
-          source={content}
-          renderers={{ code: CodeBlock }}
+      <Head>
+        <title>{post.meta.title}</title>
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
         />
-      </div>
+      </Head>
+      <Nav />
+      <article className="prose dark:prose-dark prose-purple lg:prose-xl mx-auto mt-8">
+        <h1>{post.meta.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      </article>
     </>
   );
 };
 
-const CodeBlock = ({ language, value }) => {
-  return (
-    <SyntaxHighlighter showLineNumbers={true} language={language}>
-      {value}
-    </SyntaxHighlighter>
-  );
-};
+export async function getStaticProps({ params }) {
+  const post = getPostBySlug(params.slug, ['title', 'date', 'slug', 'content']);
+  const content = await markdownToHtml(post.content || '');
 
-PostTemplate.getInitialProps = async (context) => {
-  const { slug } = context.query;
-  const content = await import(`../../../content/posts/${slug}.md`);
-  const data = matter(content.default);
+  return {
+    props: {
+      post: {
+        ...post,
+        content,
+      },
+    },
+  };
+}
 
-  return { ...data };
-};
+export async function getStaticPaths() {
+  const posts = getAllPosts(['slug']);
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
+}
 
 export default PostTemplate;
