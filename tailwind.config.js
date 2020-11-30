@@ -27,13 +27,23 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.white'),
+            h1: {
+              color: theme('colors.purple.300'),
+              textTransform: 'uppercase',
+            },
+            h2: {
+              color: theme('colors.purple.300'),
+            },
+            code: {
+              color: theme('colors.purple.300'),
+            },
           },
         },
       }),
     },
   },
   variants: {
-    extend: {},
+    extend: { typography: ['dark'] },
   },
   plugins: [require('@tailwindcss/typography')],
 };
