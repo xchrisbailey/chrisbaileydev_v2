@@ -1,19 +1,22 @@
 import matter from 'gray-matter';
 import Nav from '../components/nav';
-import Link from 'next/link';
+import { ListItem } from '../components/ListItem';
 
 export default function IndexPage(props) {
   let posts = props.posts.map((post) => matter(post));
   posts = posts.map((post) => post.data);
+  posts.sort(function compare(a, b) {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
+  });
 
   return (
     <div>
       <Nav />
-      <div className="py-20">
+      <div className="container mx-auto mt-6">
         {posts.map((post, i) => (
-          <Link href={`/posts/${post.slug}`} key={i}>
-            {post.title}
-          </Link>
+          <ListItem key={i} item={post} />
         ))}
       </div>
     </div>
