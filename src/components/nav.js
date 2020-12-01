@@ -9,13 +9,13 @@ export default function Nav() {
         </a>
       </Link>
       <div className="flex space-x-4">
-        <div className="flex p-0 m-0 items-center justify-start px-3 py-2">
+        <div className="nav-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-4 w-4 mr-1 dark:text-white text-black"
+            className="nav-icon"
           >
             <path
               strokeLinecap="round"
@@ -25,18 +25,16 @@ export default function Nav() {
             />
           </svg>
           <Link href="/write">
-            <a className="rounded-md text-sm font-medium text-black dark:text-white hover:underline">
-              WRITE
-            </a>
+            <a className="nav-link">WRITE</a>
           </Link>
         </div>
-        <div className="flex p-0 m-0 items-center justify-start px-3 py-2">
+        <div className="nav-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-4 w-4 mr-1 dark:text-white text-black"
+            className="nav-icon"
           >
             <path
               strokeLinecap="round"
@@ -46,20 +44,17 @@ export default function Nav() {
             />
           </svg>
 
-          <a
-            href="#"
-            className=" rounded-md text-sm font-medium text-black dark:text-white hover:underline"
-          >
+          <a href="#" className="nav-link">
             MAKE
           </a>
         </div>
-        <div className="flex p-0 m-0 items-center justify-start px-3 py-2">
+        <div className="nav-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-4 w-4 mr-1 dark:text-white text-black"
+            className="nav-icon"
           >
             <path
               strokeLinecap="round"
@@ -68,10 +63,7 @@ export default function Nav() {
               d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
             />
           </svg>
-          <a
-            href="#"
-            className=" rounded-md text-sm font-medium uppercase text-black dark:text-white hover:underline"
-          >
+          <a href="#" className="nav-link">
             LIFE
           </a>
         </div>

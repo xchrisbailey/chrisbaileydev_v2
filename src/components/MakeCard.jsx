@@ -16,10 +16,14 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
             />
           </div>
           <div className="px-4 py-4 md:px-10">
-            <h1 className="font-bold text-lg">{title}</h1>
-            <p className="py-4">{desc}</p>
+            <h1 className="font-bold text-lg text-black dark:text-white">
+              {title}
+            </h1>
+            <p className="py-4 text-black dark:text-white">{desc}</p>
             <div className="flex justify-between flex-wrap pt-8">
-              <div className="w-full md:w-1/3 text-sm font-medium ">{date}</div>
+              <div className="w-full md:w-1/3 text-sm font-medium text-black dark:text-white">
+                {date}
+              </div>
               <div className="2/3">
                 <div className="flex items-center justify-end text-sm font-medium">
                   <div className="flex mr-4 items-center">
@@ -28,7 +32,7 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
-                      className="h-5 w-5 mr-1 text-green-500 dark:text-green-300"
+                      className="github-icon"
                     >
                       <path
                         strokeLinecap="round"
@@ -37,10 +41,7 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
                         d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    <a
-                      href={github}
-                      className="text-green-500 dark:text-green-300 hover:underline"
-                    >
+                    <a href={github} className="github-link">
                       github
                     </a>
                   </div>
@@ -50,7 +51,7 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
-                      className="h-5 w-5 mr-1 text-blue-500 dark:text-blue-300"
+                      className="view-icon"
                     >
                       <path
                         strokeLinecap="round"
@@ -59,10 +60,7 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
                         d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                       />
                     </svg>
-                    <a
-                      href={view}
-                      className="text-blue-500 dark:text-blue-300 hover:underline"
-                    >
+                    <a href={view} className="view-link">
                       view project
                     </a>
                   </div>

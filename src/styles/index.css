@@ -6,33 +6,37 @@
 @tailwind components;
 /* Stop purging. */
 
-html,
-body {
-  @apply bg-gray-50 dark:bg-gray-900;
-}
-
-p {
-  @apply text-black dark:text-white mb-4 text-base;
-}
-
-h1 {
-  @apply text-3xl text-purple-700 mb-4 font-bold;
-}
-
-h2 {
-  @apply text-xl mb-4 text-gray-700 font-bold;
-}
-
-code {
-  @apply p-1 rounded-md;
-}
-
-pre {
-  @apply bg-none p-2 my-3 rounded-lg;
-}
-
 /* Write your own custom component styles here */
+.github-icon {
+  @apply h-5 w-5 mr-1 text-green-500 dark:text-green-300;
+}
 
+.github-link {
+  @apply text-green-500 dark:text-green-300 hover:underline;
+}
+
+.view-icon {
+  @apply h-5 w-5 mr-1 text-blue-500 dark:text-blue-300;
+}
+.view-link {
+  @apply text-blue-500 dark:text-blue-300 hover:underline;
+}
+
+.purple-link {
+  @apply text-purple-700 hover:text-purple-900 dark:text-purple-400 dark:hover:text-purple-500 hover:underline;
+}
+
+.nav-item {
+  @apply flex p-0 m-0 items-center justify-start px-3 py-2;
+}
+
+.nav-link {
+  @apply rounded-md text-sm font-medium text-black dark:text-white hover:underline;
+}
+
+.nav-icon {
+  @apply h-4 w-4 mr-1 dark:text-white text-black;
+}
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
