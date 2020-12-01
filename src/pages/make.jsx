@@ -1,14 +1,12 @@
 import Head from 'next/head';
-import { getAllPosts } from '../lib/posts';
 import Nav from '../components/nav';
-import ListItem from '../components/ListItem';
 import MakeCard from '../components/MakeCard';
 
-export default function IndexPage({ allPosts }) {
+const Make = () => {
   return (
     <>
       <Head>
-        <title>chris bailey . dev</title>
+        <title>chris bailey . dev | make</title>
       </Head>
       <Nav />
       <div className="container mx-auto mt-6 ">
@@ -33,25 +31,19 @@ export default function IndexPage({ allPosts }) {
               github="https://github.com/xchrisbailey/chrisbaileydev_v2"
               view="https://chrisbailey.dev"
             />
+            <MakeCard
+              image="/make/chrisbaileydevv1.png"
+              title="chrisbailey.dev v1"
+              desc="personal blog and portfolio, built with gatsby and styled components"
+              date="August 10, 2020"
+              github="https://github.com/xchrisbailey/chrisbailey.dev"
+              view="/make/chrisbaileydevv1.png"
+            />
           </div>
         </section>
-        <div>
-          <div className="prose dark:prose-dark prose-purple lg:prose-xl">
-            <h1>Writes...</h1>
-          </div>
-          {allPosts.map((post, i) => (
-            <ListItem key={i} item={post} />
-          ))}
-        </div>
       </div>
     </>
   );
-}
+};
 
-export async function getStaticProps() {
-  const allPosts = getAllPosts(['title', 'date', 'slug']).slice(0, 9);
-
-  return {
-    props: { allPosts },
-  };
-}
+export default Make;

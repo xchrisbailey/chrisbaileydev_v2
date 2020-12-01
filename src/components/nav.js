@@ -44,7 +44,7 @@ export default function Nav() {
             />
           </svg>
 
-          <a href="#" className="nav-link">
+          <a href="/make" className="nav-link">
             MAKE
           </a>
         </div>
