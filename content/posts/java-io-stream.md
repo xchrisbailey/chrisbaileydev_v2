@@ -20,30 +20,30 @@ Scanner s = new Scanner(System.in);
 System.out.println();
 ```
 
-`java•System.in` is an example of a stream that reads data from a user's keyboard.
+`System.in` is an example of a stream that reads data from a user's keyboard.
 
-Java contains the class `java•java.io.InputStream` which is the base class for all input streams. An InputStream is a `java•Byte Stream` , which means all data will be read in byte by byte.
+Java contains the class `java.io.InputStream` which is the base class for all input streams. An InputStream is a `Byte Stream` , which means all data will be read in byte by byte.
 
 ### 🦦 Combining Streams
 
-- 👓 Reader: wrapper around streams that allows you to read `java•chars`
-- 📚 BufferedReader: wrapper that can be used around `java•Reader` . This allows you to reader more than one character at once, reducing system calls and improving performance (in most cases)
+- 👓 Reader: wrapper around streams that allows you to read `chars`
+- 📚 BufferedReader: wrapper that can be used around `Reader` . This allows you to reader more than one character at once, reducing system calls and improving performance (in most cases)
 
 ```java
 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 ```
 
-- 📃 Scanner: used to read specific data (int, long, double), and has methods like the following to make it easier `java•nextInt()` , `java•nextDouble()` , `java•nextLine()` , [etc](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#method.summary). `java•Scanner` will add overhead to your application and should be used accordingly.
+- 📃 Scanner: used to read specific data (int, long, double), and has methods like the following to make it easier `nextInt()` , `nextDouble()` , `nextLine()` , [etc](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#method.summary). `Scanner` will add overhead to your application and should be used accordingly.
 
 ### 📖 Reading From Files
 
-`java•FileInputStream` gathers data from a file byte by byte. It is intended to be used for gathering raw bytes from things like images. For handling text encoding wrapping it with an `java•InputStreamReader` will take care of this for you. Much like `java•InputStream` we can wrap this with a `java•BufferedReader` to allow the reading of multiple characters rather than going one by one.
+`FileInputStream` gathers data from a file byte by byte. It is intended to be used for gathering raw bytes from things like images. For handling text encoding wrapping it with an `InputStreamReader` will take care of this for you. Much like `InputStream` we can wrap this with a `BufferedReader` to allow the reading of multiple characters rather than going one by one.
 
-This was thought of in advanced and we have been provided with the `java•FileReader` class that combines `java•FileInputStream` and `java•InputStreamReader` for us already.
+This was thought of in advanced and we have been provided with the `FileReader` class that combines `FileInputStream` and `InputStreamReader` for us already.
 
 #### FileReader
 
-This example will read each character in the provided file (example.txt) in this example. Once we've grabbed the contents of the file we go through byte by byte by assigning the current byte to `java•c` with the `java•.read()` method, and looping until it returns -1. Since we are only reading bytes to print these out to the console we'll need to cast `java•c` to a `java•char` . Once we are finished reading the stream we'll need to close it by issuing `java•fio.close()` inside the `java•finally` block. When ran each character in the file is printed to console on its own line due to using `java•System.out.println` .
+This example will read each character in the provided file (example.txt) in this example. Once we've grabbed the contents of the file we go through byte by byte by assigning the current byte to `c` with the `.read()` method, and looping until it returns -1. Since we are only reading bytes to print these out to the console we'll need to cast `c` to a `char` . Once we are finished reading the stream we'll need to close it by issuing `fio.close()` inside the `finally` block. When ran each character in the file is printed to console on its own line due to using `System.out.println` .
 
 ```java
 // FileIOExample.java
@@ -97,7 +97,7 @@ s
 
 #### Scanner
 
-To use `java•Scanner` we first created a new instance of `java•Scanner` that we fed a `java•FileInputStream` to. Rather than keeping track of the byte count for our looping with the scanner, we can check if there's anything left to read with the `java•hasNext()` method. When then print out each chunk of gather data by sending `java•next()` to be printed. Unlike `java•FileReader` we are globbing chunks of data rather than individual bytes, so our output is not one byte per line, but rather one word per line.
+To use `Scanner` we first created a new instance of `Scanner` that we fed a `FileInputStream` to. Rather than keeping track of the byte count for our looping with the scanner, we can check if there's anything left to read with the `hasNext()` method. When then print out each chunk of gather data by sending `next()` to be printed. Unlike `FileReader` we are globbing chunks of data rather than individual bytes, so our output is not one byte per line, but rather one word per line.
 
 ```java
 // FileIOExample.java
@@ -139,7 +139,7 @@ chris
 
 #### 🗃 FileWriter
 
-`java•java.io.FileWriter` allows us to write characters to a file it works similarly to `java•java.io.FileOutputStream` , but by writing characters rather than bytes. In this example, we're reading bytes from a file using `java•java.io.FileReader` then in our while loop casting each byte to characters in our file writer until we've reached the end of the input file.
+`java.io.FileWriter` allows us to write characters to a file it works similarly to `java.io.FileOutputStream` , but by writing characters rather than bytes. In this example, we're reading bytes from a file using `java.io.FileReader` then in our while loop casting each byte to characters in our file writer until we've reached the end of the input file.
 
 ```java
 // FileIOExample.java
@@ -183,7 +183,7 @@ my name is chris
 
 #### 🖨 PrintWriter
 
-`java•java.io.PrintWriter` allows us to write formatted data to files. It gives us the ability to write primitives such as int, long, or double as formatted text rather than their byte value. For our basic example, we're reading in a file from our "example.txt" file with `java•java.util.Scanner` , and then piping each line to our `java•PrintWriter` to send the text off to the designated file ("output.txt"). We used `java•println` to write out the data sent from the scanner, which gave us one word per line in the output file. By default this will overwrite the file every time it's run, we can change this to append text by adding `java•true` as the second parameter in our `java•FileOutputStream` .
+`java.io.PrintWriter` allows us to write formatted data to files. It gives us the ability to write primitives such as int, long, or double as formatted text rather than their byte value. For our basic example, we're reading in a file from our "example.txt" file with `java.util.Scanner` , and then piping each line to our `PrintWriter` to send the text off to the designated file ("output.txt"). We used `println` to write out the data sent from the scanner, which gave us one word per line in the output file. By default this will overwrite the file every time it's run, we can change this to append text by adding `true` as the second parameter in our `FileOutputStream` .
 
 ```java
 // FileIOExample.java
@@ -224,4 +224,4 @@ is
 chris
 ```
 
-We can use `java•PrintWriter` with other file streams as well, such as `java•FileWriter`
+We can use `PrintWriter` with other file streams as well, such as `FileWriter`

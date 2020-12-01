@@ -17,46 +17,46 @@ The state tracks a few things; on the UI end things like the navigation bar bein
 
 ### 🌱 Initializing state
 
-In React state is an instance attribute on a component. State is stored in an object, making it always accessible by key-value pairs. State needs an initial value that is always set when a component is created. State is not mandatory in a component, but when it is needed/wanted a constructor must exist. Constructors take one argument `js•props` and need to register your class as a React component with `js•super(props)`. Next, we have the ability to set a default state by adding key-value pairs to `js•this.state`. A basic example will look something like this:
+In React state is an instance attribute on a component. State is stored in an object, making it always accessible by key-value pairs. State needs an initial value that is always set when a component is created. State is not mandatory in a component, but when it is needed/wanted a constructor must exist. Constructors take one argument `props` and need to register your class as a React component with `super(props)`. Next, we have the ability to set a default state by adding key-value pairs to `this.state`. A basic example will look something like this:
 
 ```javascript
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       count: 0,
-    }
+    };
   }
   render() {
-    return <div>The count is: {this.state.count}</div>
+    return <div>The count is: {this.state.count}</div>;
   }
 }
 ```
 
-Access to the state values is obtained through `js•this.state` within the class we set our constructor up in.
+Access to the state values is obtained through `this.state` within the class we set our constructor up in.
 
 ### 🔧 Changing state values
 
-Looking at it from the outside the easiest way to change state would be to just reassign the value like so `js•this.state.count = 1`. This is not correct and manipulating the state directly is not correct and should never be done.
+Looking at it from the outside the easiest way to change state would be to just reassign the value like so `this.state.count = 1`. This is not correct and manipulating the state directly is not correct and should never be done.
 
-React provides us with `js•setState()` for altering state values. It's an asynchronous operation that patches our state, and only changes the keys told to change, and everything else will state as is. You have the option of passing in an object directly, or a function into `js•setState()`. It's best to think of this operation as a request rather than an immediate command. React behind the scenes may delay the setState call so it can update a number of components at once to keep app performance at a maximum.
+React provides us with `setState()` for altering state values. It's an asynchronous operation that patches our state, and only changes the keys told to change, and everything else will state as is. You have the option of passing in an object directly, or a function into `setState()`. It's best to think of this operation as a request rather than an immediate command. React behind the scenes may delay the setState call so it can update a number of components at once to keep app performance at a maximum.
 
 Any state change in React will trigger a re-render of the affected components. This keeps the app constantly up to date with the most recent information provided to it.
 
-Let us take a quick look at a basic example of updating the counter with the `js•onClick` event listener:
+Let us take a quick look at a basic example of updating the counter with the `onClick` event listener:
 
 ```javascript
 class App extends Component {
   constructor(props) {
-    super(props)
-    this.addOne = this.addOne.bind(this)
+    super(props);
+    this.addOne = this.addOne.bind(this);
     this.state = {
       count: 0,
-    }
+    };
   }
 
   addOne(e) {
-    this.setState({ count: this.state.count + 1 })
+    this.setState({ count: this.state.count + 1 });
   }
   render() {
     return (
@@ -64,7 +64,7 @@ class App extends Component {
         The count is: {this.state.count}
         <button onClick={this.addOne}>Add one</button>
       </div>
-    )
+    );
   }
 }
 ```
@@ -73,30 +73,30 @@ class App extends Component {
 
 As of React 16.8 we have hooks! Which give us access to state managment inside functional components helping eleminate some of the performance hits from using classed based components. This is just a quick note on setting and editing state inside of functional components, I will write a longer post on hooks once I make it to that point in my learning path.
 
-Setting state and the ability to alter it within functional components is now a rather easy process. We'll use new API method `js•useState()` within our component. Let us take a look at our counter example done with hooks and walk through the differences.
+Setting state and the ability to alter it within functional components is now a rather easy process. We'll use new API method `useState()` within our component. Let us take a look at our counter example done with hooks and walk through the differences.
 
 ```javascript
-import React, { useState } from 'React'
+import React, { useState } from 'React';
 
 const App = () => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const addOne = () => {
-    return setCount(count + 1)
-  }
+    return setCount(count + 1);
+  };
 
   return (
     <div>
       The count is: {count}
       <button onClick={addOne}>add one</button>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 ```
 
-We first define our functional component `js•App`. We then create our default state for 'count' by using the `js•useState()` call and passing into it our default value for count '0'. It returns two items; our count, and the `js•setCount()` function that allows us to alter the associated state. We next create our addOne function that will call `js•setCount` and pass to it the current count + 1. React will then update our state and re-render the components needed.
+We first define our functional component `App`. We then create our default state for 'count' by using the `useState()` call and passing into it our default value for count '0'. It returns two items; our count, and the `setCount()` function that allows us to alter the associated state. We next create our addOne function that will call `setCount` and pass to it the current count + 1. React will then update our state and re-render the components needed.
 
 ### 💥 The end
 

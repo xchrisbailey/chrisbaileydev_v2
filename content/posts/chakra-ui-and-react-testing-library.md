@@ -14,14 +14,14 @@ tags:
   - 'chakra'
 ---
 
-Testing a react application using Chakra-UI is fairly straightforward once you adjust the `js•render` function of [react-testing-library](https://testing-library.com/). So we'll start by testing a basic card example grabbed from the Chakra [docs](https://chakra-ui.com/box).
+Testing a react application using Chakra-UI is fairly straightforward once you adjust the `render` function of [react-testing-library](https://testing-library.com/). So we'll start by testing a basic card example grabbed from the Chakra [docs](https://chakra-ui.com/box).
 
 ```javascript
-import { Box, Image, Badge, Icon } from '@chakra-ui/core'
-import PropTypes from 'prop-types'
+import { Box, Image, Badge, Icon } from '@chakra-ui/core';
+import PropTypes from 'prop-types';
 
-const RecipeCard = props => {
-  const { description, title, rating } = props
+const RecipeCard = (props) => {
+  const { description, title, rating } = props;
   return (
     <Box
       maxW="sm"
@@ -66,38 +66,38 @@ const RecipeCard = props => {
         </Box>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
 RecipeCard.defaultProps = {
   rating: 0,
-}
+};
 
 RecipeCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   rating: PropTypes.number,
-}
+};
 
-export default RecipeCard
+export default RecipeCard;
 ```
 
-We're also passing along a `js•ThemeProvider` in our `js•app.jsx` that has the following theme:
+We're also passing along a `ThemeProvider` in our `app.jsx` that has the following theme:
 
 ```javascript
 // theme.js
-import { theme as chakraTheme } from '@chakra-ui/core'
+import { theme as chakraTheme } from '@chakra-ui/core';
 
 const fonts = {
   ...chakraTheme.fonts,
   mono: `'Menlo', monospace`,
-}
+};
 
-const breakpoints = ['360px', '768px', '1024px', '1440px']
-breakpoints.sm = breakpoints[0]
-breakpoints.md = breakpoints[1]
-breakpoints.lg = breakpoints[2]
-breakpoints.xl = breakpoints[3]
+const breakpoints = ['360px', '768px', '1024px', '1440px'];
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
 
 const theme = {
   ...chakraTheme,
@@ -105,57 +105,57 @@ const theme = {
   fonts,
   breakpoints,
   icons: { ...chakraTheme.icons },
-}
+};
 
-export default theme
+export default theme;
 ```
 
-As far as I've been able to work out the problem getting the `js•render` function to work comes from the passing of theme down from parent components, causing siblings not to render properly or at all. The solution to this was found in the [testing-library](https://testing-library.com/docs/react-testing-library/setup#custom-render) docs under setting up a custom `js•render` . The only changes I needed to implement were passing down own theme file and the `js•CSSReset` just for consistency.
+As far as I've been able to work out the problem getting the `render` function to work comes from the passing of theme down from parent components, causing siblings not to render properly or at all. The solution to this was found in the [testing-library](https://testing-library.com/docs/react-testing-library/setup#custom-render) docs under setting up a custom `render` . The only changes I needed to implement were passing down own theme file and the `CSSReset` just for consistency.
 
 ```javascript
 // /tests/test-utils.js
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react'
-import { render } from '@testing-library/react'
-import { ThemeProvider, CSSReset } from '@chakra-ui/core'
-import theme from '../src/theme'
+import React from 'react';
+import { render } from '@testing-library/react';
+import { ThemeProvider, CSSReset } from '@chakra-ui/core';
+import theme from '../src/theme';
 
 const AllTheProviders = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CSSReset /> {children}
     </ThemeProvider>
-  )
-}
+  );
+};
 
 const customRender = (ui, options) =>
   render(ui, {
     wrapper: AllTheProviders,
     ...options,
-  })
+  });
 
 // re-export everything
-export * from '@testing-library/react'
+export * from '@testing-library/react';
 
 // override render method
-export { customRender as render }
+export { customRender as render };
 ```
 
-Now that we have extended the `js•render` component we can import it directly from our `js•test-utils.js` file and proceed to test as normal. Everything should be rendering now and we should be able to test our components to our hearts desire.
+Now that we have extended the `render` component we can import it directly from our `test-utils.js` file and proceed to test as normal. Everything should be rendering now and we should be able to test our components to our hearts desire.
 
 ```javascript
-import React from 'react'
-import { screen } from '@testing-library/react'
-import { render } from './test-utils'
-import RecipeCard from '../src/components/card'
+import React from 'react';
+import { screen } from '@testing-library/react';
+import { render } from './test-utils';
+import RecipeCard from '../src/components/card';
 
 it('renders a card', () => {
-  const title = 'heyoooo'
-  const desc = 'basic card example'
-  const rating = 4
-  render(<RecipeCard title={title} description={desc} rating={rating} />)
+  const title = 'heyoooo';
+  const desc = 'basic card example';
+  const rating = 4;
+  render(<RecipeCard title={title} description={desc} rating={rating} />);
 
-  expect(screen.getByText(title)).toBeInTheDocument()
-  expect(screen.getByText(desc)).toBeInTheDocument()
-})
+  expect(screen.getByText(title)).toBeInTheDocument();
+  expect(screen.getByText(desc)).toBeInTheDocument();
+});
 ```

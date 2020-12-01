@@ -18,19 +18,19 @@ Objects are a different way to store information. They're like arrays, but the c
 
 ```javascript
 // array
-var person1 = ['chris', 33, 'Detroit']
+var person1 = ['chris', 33, 'Detroit'];
 
 // object
 var person2 = {
   name: 'Chris',
   age: 33,
   city: 'Detroit',
-}
+};
 ```
 
-Both contain the same information, the object just has a verbose syntax that allows us to assign things based on a key. There are two ways to retrieve the data; bracket notation which is similar to arrays `js•person2["name"]` we just use the key value rather than index number, and dot notation `js•person2.name` which is shorter and simpler. A couple of caveats with dot notation are the key can not start with a number or contain spaces, and you can not use a variable for looking up a key in dot notation. Both will return same value of "Chris".
+Both contain the same information, the object just has a verbose syntax that allows us to assign things based on a key. There are two ways to retrieve the data; bracket notation which is similar to arrays `person2["name"]` we just use the key value rather than index number, and dot notation `person2.name` which is shorter and simpler. A couple of caveats with dot notation are the key can not start with a number or contain spaces, and you can not use a variable for looking up a key in dot notation. Both will return same value of "Chris".
 
-We also have the option of easily creating a new empty object with the `js•new Object();` method.
+We also have the option of easily creating a new empty object with the `new Object();` method.
 
 ### Updating Data
 
@@ -41,15 +41,15 @@ var person = {
   name: 'Chris',
   age: '33',
   city: 'Detroit',
-}
+};
 
 // bracket notation
-person['age'] += 1 // adds 1 to age making it 34
+person['age'] += 1; // adds 1 to age making it 34
 
 // dot notation
-person.city = 'Grand Rapids' // changes city from "Detroit" to "Grand Rapids"
+person.city = 'Grand Rapids'; // changes city from "Detroit" to "Grand Rapids"
 
-person // {name: "Chris", age: 34, city: "Grand Rapids"}
+person; // {name: "Chris", age: 34, city: "Grand Rapids"}
 ```
 
 ### Data
@@ -67,7 +67,7 @@ var person = {
     breed: 'Goldendoodle',
     age: 9,
   },
-}
+};
 ```
 
 ### Nested Arrays and Objects
@@ -93,18 +93,18 @@ posts[0].tags[1]; // "dogs"
 
 ### Adding Methods to Objects
 
-We have the ability to add functions to keys in an object, when doing this they are just referred to as methods. Not much changes from what we do with stand alone functions, we just need to call the name of the object before like so: `js•obj.add(1 + 2)` . An example would be `js•console.log()` where console is an object and log is a method (function).
+We have the ability to add functions to keys in an object, when doing this they are just referred to as methods. Not much changes from what we do with stand alone functions, we just need to call the name of the object before like so: `obj.add(1 + 2)` . An example would be `console.log()` where console is an object and log is a method (function).
 
 ```javascript
 var doMaths = {
   add: function (x, y) {
-    return x + y
+    return x + y;
   },
   subtract: function (x, y) {
-    return x - y
+    return x - y;
   },
-}
+};
 
-doMaths.add(1, 2) // 3
-doMaths.subtract(2, 1) // 1
+doMaths.add(1, 2); // 3
+doMaths.subtract(2, 1); // 1
 ```

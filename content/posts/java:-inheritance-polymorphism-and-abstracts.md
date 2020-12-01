@@ -13,7 +13,7 @@ tags:
 
 ### 👨‍👩‍👦 Inheritance
 
-In Java inheritance is the relationship between classes that allow the passing of data and functionality between them. Java only deals in single inheritances, meaning you can only inherit from one other class. However, you can have multiple interfaces. There are numerous terms for these relationships, the ones you'll hear most in Java is superclass and subclass. Every object in Java is derived from the parent Object class, and any class can be a superclass. By using the keyword `java•final` in the definition you can prevent a class from being a superclass. All fields and methods of the superclass are inherited unless marked `java•private`, we can use getters and setters to expose private fields or methods. Using the `java•@Override` annotation helps with readability and improves the compilers ability to catch errors.
+In Java inheritance is the relationship between classes that allow the passing of data and functionality between them. Java only deals in single inheritances, meaning you can only inherit from one other class. However, you can have multiple interfaces. There are numerous terms for these relationships, the ones you'll hear most in Java is superclass and subclass. Every object in Java is derived from the parent Object class, and any class can be a superclass. By using the keyword `final` in the definition you can prevent a class from being a superclass. All fields and methods of the superclass are inherited unless marked `private`, we can use getters and setters to expose private fields or methods. Using the `@Override` annotation helps with readability and improves the compilers ability to catch errors.
 
 ```java
 // create Item class
@@ -45,7 +45,7 @@ public class DogFood extends Item {
 
 ### 👴 Polymorphism
 
-Polymorphism allows subclasses to be both themselves and the superclass they are inheriting from. They will have the ability to call available methods from the superclass, subclass methods are given access to arguments via `java•super()`, and can pass instances of subtypes.
+Polymorphism allows subclasses to be both themselves and the superclass they are inheriting from. They will have the ability to call available methods from the superclass, subclass methods are given access to arguments via `super()`, and can pass instances of subtypes.
 
 ```java
 // create class Item (our super class)

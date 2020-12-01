@@ -28,7 +28,7 @@ Handling events in React is very similar to how we would handle them on the DOM.
 
 - _onChange_ is called when a form control changes the value
 - _onInput_ Identical to _onChange_ and is preferred of two.
-- _onSubmit_ is a special prop for `js•<form>` elements that is called when a `js•<button type="submit">` is pressed or return is hit within a field.
+- _onSubmit_ is a special prop for `<form>` elements that is called when a `<button type="submit">` is pressed or return is hit within a field.
 
 ### Mouse
 
@@ -42,37 +42,37 @@ Handling events in React is very similar to how we would handle them on the DOM.
 Basic form controls:
 
 ```javascript
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const ContactForm = () => {
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = e => {
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
     // send email code
-    setEmail('')
-    setMessage('')
-  }
+    setEmail('');
+    setMessage('');
+  };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        onChange={e => setEmail(e.target.value)}
+        onChange={(e) => setEmail(e.target.value)}
         value={email}
         placeholder="enter email"
       />
       <input
         type="text"
-        onChange={e => setMessage(e.target.value)}
+        onChange={(e) => setMessage(e.target.value)}
         value={message}
         placeholder="Enter a message"
       />
       <button>Send</button>
     </form>
-  )
-}
+  );
+};
 ```
 
-We use `js•onChange` to update our state every time the input for the associated item is changed, and `js•onSubmit` to execute whatever code we need to send off the message form and then clear the state and input values.
+We use `onChange` to update our state every time the input for the associated item is changed, and `onSubmit` to execute whatever code we need to send off the message form and then clear the state and input values.

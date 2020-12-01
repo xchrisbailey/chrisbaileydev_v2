@@ -1,5 +1,8 @@
 {
   "conventionalCommits.scopes": [
     "typography darkmode"
+  ],
+  "cSpell.words": [
+    "chrisbaileydevv"
   ]
 }

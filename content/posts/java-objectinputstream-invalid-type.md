@@ -9,7 +9,7 @@ tags:
   - 'java'
 ---
 
-While using `java•ObjectInputStream` and `java•ObjectOutputStream` together for a class project I continually ran into `java•java objectinputstream invalid type code: ac` which was becoming endlessly annoying. Initially, I was attempting to use try-with-resources blocks to limit my need for finally catches, but this proved to be the main culprit in my issue.
+While using `ObjectInputStream` and `ObjectOutputStream` together for a class project I continually ran into `java objectinputstream invalid type code: ac` which was becoming endlessly annoying. Initially, I was attempting to use try-with-resources blocks to limit my need for finally catches, but this proved to be the main culprit in my issue.
 
 ```java
 public static void main(String[] args) {
@@ -29,9 +29,9 @@ public static void StuffDoer() {
 }
 ```
 
-From what I've been able to gather this has to with `java•ObjectOutputStream` writing the headers and sharing between the two, but only while it has not been closed, once closed and we attempt to open a second/new stream it's no longer able to handle the binary data that has been written.
+From what I've been able to gather this has to with `ObjectOutputStream` writing the headers and sharing between the two, but only while it has not been closed, once closed and we attempt to open a second/new stream it's no longer able to handle the binary data that has been written.
 
-Since I'm still a 🐶 in this Java stuff, research was needed and stackoverflow seems to have provided. [this](https://stackoverflow.com/a/57397429) answer was what I found to work best for my use cases. It creates a class extending `java•ObjectOutputStream` that basically avoids writing the headers each time as far as I can tell, it's still kind of magic to me.
+Since I'm still a 🐶 in this Java stuff, research was needed and stackoverflow seems to have provided. [this](https://stackoverflow.com/a/57397429) answer was what I found to work best for my use cases. It creates a class extending `ObjectOutputStream` that basically avoids writing the headers each time as far as I can tell, it's still kind of magic to me.
 
 ```java
 import java.io.DataOutputStream;
@@ -71,7 +71,7 @@ public class AppendableObjectOutputStream extends ObjectOutputStream {
 }
 ```
 
-Usage of the class will be nearly same as just outright using `java•ObjectOutputStream`
+Usage of the class will be nearly same as just outright using `ObjectOutputStream`
 
 ```java
 File file = new File('some.dat');
