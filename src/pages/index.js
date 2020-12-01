@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { getAllPosts } from '../lib/posts';
 import Nav from '../components/nav';
-import { ListItem } from '../components/ListItem';
-import { MakeCard } from '../components/MakeCard';
+import ListItem from '../components/ListItem';
+import MakeCard from '../components/MakeCard';
 
 export default function IndexPage({ allPosts }) {
   return (

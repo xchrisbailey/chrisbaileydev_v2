@@ -1,6 +1,6 @@
 import { getAllPosts } from '../lib/posts';
 import Nav from '../components/nav';
-import { ListItem } from '../components/ListItem';
+import ListItem from '../components/ListItem';
 
 export const WritePage = ({ allPosts }) => {
   return (

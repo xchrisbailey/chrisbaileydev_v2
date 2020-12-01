@@ -1,15 +1,14 @@
 import Image from 'next/image';
 
-export const MakeCard = ({ image, title, desc, date, github, view }) => {
+const MakeCard = ({ image, title, desc, date, github, view }) => {
   return (
-    <div className="flex flex-wrap mt-2">
+    <div className="flex flex-wrap">
       <div className="w-full">
         <div className="bg-white dark:bg-gray-800 shadow-sm rounded-md">
           <div className="h-56 overflow-hidden p-2">
             <Image
               src={image}
               alt={title}
-              objectFit
               width="400"
               height="400"
               objectFit="cover"
@@ -23,38 +22,50 @@ export const MakeCard = ({ image, title, desc, date, github, view }) => {
               <div className="w-full md:w-1/3 text-sm font-medium ">{date}</div>
               <div className="2/3">
                 <div className="flex items-center justify-end text-sm font-medium">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="h-5 w-5 mr-2 "
-                  >
-                    <a href={github}>
+                  <div className="flex mr-4 items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="h-5 w-5 mr-1 text-green-500 dark:text-green-300"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={1.5}
                         d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
+                    </svg>
+                    <a
+                      href={github}
+                      className="text-green-500 dark:text-green-300 hover:underline"
+                    >
+                      github
                     </a>
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="h-5 w-5 mr-2"
-                  >
-                    <a href={view}>
+                  </div>
+                  <div className="flex mr-0 items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="h-5 w-5 mr-1 text-blue-500 dark:text-blue-300"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={1.5}
                         d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                       />
+                    </svg>
+                    <a
+                      href={view}
+                      className="text-blue-500 dark:text-blue-300 hover:underline"
+                    >
+                      view project
                     </a>
-                  </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -64,3 +75,5 @@ export const MakeCard = ({ image, title, desc, date, github, view }) => {
     </div>
   );
 };
+
+export default MakeCard;
