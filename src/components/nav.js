@@ -5,7 +5,7 @@ export default function Nav() {
     <nav className="flex px-5 py-5 font-semibold bg-gray-100 dark:bg-gray-900 shadow-md justify-between items-center">
       <Link href="/">
         <a className="text-xl uppercase text-purple-600 dark:text-purple-200 dark:hover:text-purple-400">
-          chris bailey dev
+          chris bailey . dev
         </a>
       </Link>
       <div className="flex space-x-4">
@@ -15,7 +15,7 @@ export default function Nav() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-4 w-4 mr-1 dark:text-white"
+            className="h-4 w-4 mr-1 dark:text-white text-black"
           >
             <path
               strokeLinecap="round"
@@ -24,12 +24,11 @@ export default function Nav() {
               d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
             />
           </svg>
-          <a
-            href="#"
-            className="rounded-md text-sm font-medium text-black dark:text-white hover:underline"
-          >
-            WRITE
-          </a>
+          <Link href="/write">
+            <a className="rounded-md text-sm font-medium text-black dark:text-white hover:underline">
+              WRITE
+            </a>
+          </Link>
         </div>
         <div className="flex p-0 m-0 items-center justify-start px-3 py-2">
           <svg
@@ -37,7 +36,7 @@ export default function Nav() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-4 w-4 mr-1 dark:text-white"
+            className="h-4 w-4 mr-1 dark:text-white text-black"
           >
             <path
               strokeLinecap="round"
@@ -60,20 +59,20 @@ export default function Nav() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-4 w-4 mr-1 dark:text-white"
+            className="h-4 w-4 mr-1 dark:text-white text-black"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={1.5}
-              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
             />
           </svg>
           <a
             href="#"
             className=" rounded-md text-sm font-medium uppercase text-black dark:text-white hover:underline"
           >
-            TALK
+            LIFE
           </a>
         </div>
       </div>

@@ -22,20 +22,38 @@ module.exports = {
               color: theme('colors.purple.700'),
               textTransform: 'uppercase',
             },
+            h2: {
+              color: theme('colors.purple.700'),
+              borderBottom: `3px solid ${theme('colors.purple.700')}`,
+            },
+            h3: {
+              color: theme('colors.purple.700'),
+            },
+            h4: {
+              color: theme('colors.purple.700'),
+            },
           },
         },
         dark: {
           css: {
             color: theme('colors.white'),
+            p: {
+              color: theme('colors.white'),
+            },
             h1: {
               color: theme('colors.purple.300'),
               textTransform: 'uppercase',
             },
             h2: {
               color: theme('colors.purple.300'),
+              borderBottom: `3px solid ${theme('colors.purple.300')}`,
             },
             code: {
               color: theme('colors.purple.300'),
+            },
+            blockquote: {
+              color: theme('colors.grey.500'),
+              borderLeftColor: theme('colors.grey.500'),
             },
           },
         },
