@@ -2,6 +2,7 @@
 title: 'The DOM'
 slug: 'the-dom'
 date: '2019-02-07T16:00:12-05:00'
+excerpt: 'The DOM is the interface between our css/html and javascript. It allows us to change things with the use of javascript. Everything lives inside of the one object, the "document".'
 published: true
 images:
 tags:

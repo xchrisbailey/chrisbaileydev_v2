@@ -3,7 +3,7 @@ slug: 'javafx-scene-switching'
 title: 'JavaFX Scene Switching'
 date: '2020-07-29T16:00:24.033Z'
 published: true
-excerpt: 'how to switch scenes in JavaFX with and without passing data'
+excerpt: 'Scene switching in JavaFX, including examples of passing and not passing data between'
 author: 'Chris Bailey'
 tags:
   - 'java'

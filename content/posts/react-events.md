@@ -2,6 +2,7 @@
 slug: 'react-events'
 title: 'React: Events'
 date: '2019-05-14T16:19:05.702Z'
+excerpt: 'Event handling in react'
 published: true
 author: 'Chris Bailey'
 tags:

@@ -2,6 +2,7 @@
 slug: 'react-state'
 title: 'React: State'
 date: '2019-05-01T16:57:30.468Z'
+excerpt: 'Storing and retrieving application state in react'
 published: true
 author: 'Chris Bailey'
 tags:

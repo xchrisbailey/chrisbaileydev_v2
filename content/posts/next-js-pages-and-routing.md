@@ -2,6 +2,7 @@
 slug: 'next-js-pages-and-routing'
 title: 'Next.js: Pages and Routing'
 date: '2019-10-06T15:29:10.415Z'
+excerpt: 'pages and routing with in the file based system of next'
 published: true
 author: 'Chris Bailey'
 tags:

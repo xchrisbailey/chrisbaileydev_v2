@@ -2,6 +2,7 @@
 title: 'Javascript Objects'
 slug: 'javascript-objects'
 date: '2019-02-07T15:28:00-05:00'
+excerpt: 'Objects and storing your data in javascript'
 published: true
 images:
 tags:

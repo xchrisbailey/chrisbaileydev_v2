@@ -3,7 +3,7 @@ slug: 'java-objectinputstream-invalid-type'
 title: 'java objectinputstream invalid type code: ac, why...'
 date: '2020-05-24T17:55:26.301Z'
 published: true
-excerpt: 'classwork solution to corrupting the datas'
+excerpt: 'Work around for corrupted data from object input streams'
 author: 'Chris Bailey'
 tags:
   - 'java'

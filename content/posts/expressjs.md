@@ -2,6 +2,7 @@
 title: 'Express.js'
 slug: 'express-js'
 date: '2019-02-12T00:55:00-05:00'
+excerpt: 'Fundamentals to using express.js for creating node.js backend APIs'
 published: true
 images:
 tags:

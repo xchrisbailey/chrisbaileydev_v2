@@ -2,6 +2,7 @@
 slug: 'react-react-router'
 title: 'React: React Router'
 date: '2019-04-27T20:55:57.915Z'
+excerpt: 'Using react routers component library to move around your web application with ease'
 published: true
 author: 'Chris Bailey'
 tags:

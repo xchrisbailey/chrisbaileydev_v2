@@ -2,6 +2,7 @@
 slug: 'next-js-9-getting-started'
 title: 'Next.js 9: Getting Started'
 date: '2019-09-28T04:34:32.277Z'
+excerpt: 'Introductory look at next.js for front end development'
 published: true
 author: 'Chris Bailey'
 tags:

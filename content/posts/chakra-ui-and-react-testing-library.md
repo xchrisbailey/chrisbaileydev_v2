@@ -3,7 +3,7 @@ slug: 'chakra-ui-and-react-testing-library'
 title: 'Chakra-UI and react-testing-library'
 date: '2020-07-07T14:50:10.352Z'
 published: true
-excerpt: 'setting up react-testing-library to handle chakra'
+excerpt: 'Testing in applications that use chakra-ui and react testing library'
 author: 'Chris Bailey'
 tags:
   - 'react'

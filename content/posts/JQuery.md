@@ -2,6 +2,7 @@
 title: 'jQuery'
 slug: 'jquery'
 date: '2019-02-08T12:23:12-05:00'
+excerpt: 'A brief look at jQuery a powerful javascript library for working in the browser'
 published: true
 images:
 tags:

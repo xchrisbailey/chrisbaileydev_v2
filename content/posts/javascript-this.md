@@ -2,6 +2,7 @@
 title: 'Javascript This'
 slug: 'javascript-this'
 date: '2019-02-07T15:40:37-05:00'
+excerpt: 'the `this` keyword in javascript'
 published: true
 images:
 tags:

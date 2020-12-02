@@ -2,6 +2,7 @@
 title: 'Javascript Functions'
 slug: 'javascript-functions'
 date: '2019-02-05T14:55:17-05:00'
+excerpt: 'Dealing with functions in javascript to help clean up your code and stop unnecessarily repeating yourself.'
 published: true
 images:
 tags:
@@ -18,12 +19,12 @@ Basic function syntax is something along the following lines:
 
 ```javascript
 function myFunction(a, b) {
-  return a + b
+  return a + b;
 }
 
 function myFunction2() {
-  var a = 0
-  return a
+  var a = 0;
+  return a;
 }
 ```
 
@@ -31,17 +32,17 @@ functions can also call other functions:
 
 ```javascript
 function myFunction() {
-  var a = 0
-  return a
+  var a = 0;
+  return a;
 }
 
-var num = 2
+var num = 2;
 
 function myFunction2(a, b) {
-  return a + b
+  return a + b;
 }
 
-myFunction2(myFunction(), num) // 2
+myFunction2(myFunction(), num); // 2
 ```
 
 Anonymous functions exist and are called at runtime with out any named identifer. They are flexible and can be assigned directly to a variable. There are two forms and they look like this:
@@ -49,11 +50,11 @@ Anonymous functions exist and are called at runtime with out any named identifer
 ```javascript
 // Function Expression
 var squared = function (num) {
-  return num * num
-}
+  return num * num;
+};
 
 // Arrow Expression
-var cubed = num => {
-  return num * num * num
-}
+var cubed = (num) => {
+  return num * num * num;
+};
 ```

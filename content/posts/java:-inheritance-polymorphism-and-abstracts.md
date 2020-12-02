@@ -3,7 +3,7 @@ slug: 'java:-inheritance-polymorphism-and-abstracts'
 title: 'Java: Inheritance, Polymorphism and Abstracts'
 date: '2020-05-27T19:25:49.223Z'
 published: true
-excerpt: 'quick run down of polymorphism, inheritance and abstract classes and methods in Java.'
+excerpt: 'quick and dirty run down of polymorphism, inheritance, abstract classes and methods in Java.'
 author: 'Chris Bailey'
 tags:
   - 'java'

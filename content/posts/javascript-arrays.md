@@ -2,6 +2,7 @@
 title: 'Javascript Arrays'
 slug: 'javascript-arrays'
 date: '2019-02-05T17:18:50-05:00'
+excerpt: 'Overview of working with arrays with in javascript'
 published: true
 images:
 tags:
