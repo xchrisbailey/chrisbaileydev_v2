@@ -7,7 +7,7 @@ const ListItem = ({ item }) => {
       <Link href={`/posts/${item.meta.slug}`}>
         <a className="purple-link">{item.meta.title}</a>
       </Link>
-      <p className="text-gray-500">
+      <p className="text-gray-700 dark:text-gray-300">
         {dayjs(item.meta.date).format('MM/DD/YYYY')}
       </p>
     </div>

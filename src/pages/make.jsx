@@ -1,10 +1,16 @@
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
+
 import Nav from '../components/nav';
 import MakeCard from '../components/MakeCard';
 
 const Make = () => {
   return (
     <>
+      <NextSeo
+        title="chrisbailey.dev projects"
+        description="list of notable things i've made, mostly using react and nodejs"
+      />
       <Head>
         <title>chris bailey . dev | make</title>
       </Head>
@@ -12,7 +18,7 @@ const Make = () => {
       <div className="container mx-auto mt-6 ">
         <section className="mb-10">
           <div className="prose dark:prose-dark prose-purple lg:prose-xl">
-            <h1>makes...</h1>
+            <h1>make</h1>
           </div>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
             <MakeCard

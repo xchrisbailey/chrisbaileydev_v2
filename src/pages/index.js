@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
+
 import { getAllPosts } from '../lib/posts';
 import Nav from '../components/nav';
 import ListItem from '../components/ListItem';
@@ -7,6 +9,10 @@ import MakeCard from '../components/MakeCard';
 export default function IndexPage({ allPosts }) {
   return (
     <>
+      <NextSeo
+        title="chrisbailey.dev"
+        description="personal blog and portfolio site for web and software development"
+      />
       <Head>
         <title>chris bailey . dev</title>
       </Head>

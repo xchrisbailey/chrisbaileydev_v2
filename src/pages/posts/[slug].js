@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 import { getAllPosts, getPostBySlug } from '../../lib/posts';
 import markdownToHtml from '../../lib/markdown';
@@ -8,6 +9,7 @@ import Nav from '../../components/nav';
 const PostTemplate = ({ post }) => {
   return (
     <>
+      <NextSeo title={post.meta.title} />
       <Head>
         <title>chris bailey (.) dev{post.meta.title}</title>
       </Head>
