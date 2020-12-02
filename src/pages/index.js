@@ -41,21 +41,26 @@ export default function IndexPage({ allPosts }) {
             />
           </div>
         </section>
-        <div>
+        <section>
           <div className="prose dark:prose-dark prose-purple lg:prose-xl">
             <h1>Writes...</h1>
           </div>
-          {allPosts.map((post, i) => (
-            <ListItem key={i} item={post} />
-          ))}
-        </div>
+          <div className="bg-white dark:bg-gray-800 shadow-sm rounded-md">
+            {allPosts.map((post, i) => (
+              <ListItem key={i} item={post} />
+            ))}
+          </div>
+        </section>
       </div>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(['title', 'date', 'slug']).slice(0, 9);
+  const allPosts = getAllPosts(['title', 'date', 'slug', 'excerpt']).slice(
+    0,
+    9
+  );
 
   return {
     props: { allPosts },
