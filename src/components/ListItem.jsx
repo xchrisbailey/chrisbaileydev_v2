@@ -11,7 +11,7 @@ const ListItem = ({ item }) => {
           </a>
         </Link>
         <p className="text-gray-700 dark:text-gray-500 text-sm">
-          {dayjs(item.meta.date).format('MM/DD/YYYY')}
+          {dayjs(item.meta.date).format('MMMM DD, YYYY')}
         </p>
       </div>
       <p className="text-lg text-black dark:text-white">{item.meta.excerpt}</p>
