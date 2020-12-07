@@ -14,7 +14,7 @@ const PostTemplate = ({ post }) => {
         <title>chris bailey (.) dev{post.meta.title}</title>
       </Head>
       <Nav />
-      <article className="prose dark:prose-dark prose-purple lg:prose-xl mx-auto mt-8">
+      <article className="prose dark:prose-dark prose-purple lg:prose-xl m-2 mt-8 md:m-0 md:mx-auto md:mt-8">
         <h1>{post.meta.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </article>

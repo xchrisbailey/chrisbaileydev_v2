@@ -18,7 +18,7 @@ export default function IndexPage({ allPosts }) {
       </Head>
       <Nav />
       <div className="container mx-auto mt-6 ">
-        <section className="mb-10">
+        <section className="m-2 mb-10 md:m-0 md:mb-10">
           <div className="prose dark:prose-dark prose-purple lg:prose-xl">
             <h1>makes...</h1>
           </div>
@@ -41,11 +41,11 @@ export default function IndexPage({ allPosts }) {
             />
           </div>
         </section>
-        <section>
+        <section className="m-2 md:m-0">
           <div className="prose dark:prose-dark prose-purple lg:prose-xl">
             <h1>Writes...</h1>
           </div>
-          <div className="bg-white dark:bg-gray-800 shadow-sm rounded-md">
+          <div>
             {allPosts.map((post, i) => (
               <ListItem key={i} item={post} />
             ))}

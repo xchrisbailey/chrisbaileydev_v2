@@ -15,7 +15,7 @@ const Make = () => {
         <title>chris bailey . dev | make</title>
       </Head>
       <Nav />
-      <div className="container mx-auto mt-6 ">
+      <div className="md:container md:mx-auto mt-6 mx-2 ">
         <section className="mb-10">
           <div className="prose dark:prose-dark prose-purple lg:prose-xl">
             <h1>make</h1>

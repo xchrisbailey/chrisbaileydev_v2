@@ -3,10 +3,10 @@ import dayjs from 'dayjs';
 
 const ListItem = ({ item }) => {
   return (
-    <div className="mx-2 my-1 p-3  flex flex-col justify-between  border-b-2 border-gray-100 dark:border-gray-900">
+    <div className="my-8 flex flex-col justify-between  border-b-2 border-gray-100 dark:border-gray-900">
       <div className="flex items-baseline">
         <Link href={`/posts/${item.meta.slug}`}>
-          <a className="purple-link text-xl font-bold mr-4">
+          <a className="purple-link text-2xl font-bold mr-4">
             {item.meta.title}
           </a>
         </Link>
