@@ -18,8 +18,8 @@ export default function IndexPage({ allPosts }) {
       </Head>
       <Nav />
       <div className="container mx-auto mt-6 ">
-        <section className="m-2 mb-10 md:m-0 md:mb-10">
-          <div className="prose dark:prose-dark prose-purple lg:prose-xl">
+        <section className="m-2 mb-5 md:m-0 md:mb-14">
+          <div className="prose dark:prose-dark prose-purple lg:prose-xl mb-8">
             <h1>makes...</h1>
           </div>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2">

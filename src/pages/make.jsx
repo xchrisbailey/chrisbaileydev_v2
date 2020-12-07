@@ -17,7 +17,7 @@ const Make = () => {
       <Nav />
       <div className="md:container md:mx-auto mt-6 mx-2 ">
         <section className="mb-10">
-          <div className="prose dark:prose-dark prose-purple lg:prose-xl">
+          <div className="prose dark:prose-dark prose-purple lg:prose-xl mb-8">
             <h1>make</h1>
           </div>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
