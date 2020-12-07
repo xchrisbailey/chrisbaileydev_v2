@@ -10,7 +10,7 @@ const ListItem = ({ item }) => {
             {item.meta.title}
           </a>
         </Link>
-        <p className="text-gray-700 dark:text-gray-500 text-sm">
+        <p className="text-gray-900 dark:text-gray-300 text-sm">
           {dayjs(item.meta.date).format('MMMM DD, YYYY')}
         </p>
       </div>
