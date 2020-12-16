@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 
-import { getAllPosts } from '../lib/posts';
+import { getAllFilesFrontMatter } from '../lib/mdx';
 import Nav from '../components/nav';
-import ListItem from '../components/ListItem';
+import PostListItem from '../components/PostListItem';
 
-export const WritePage = ({ allPosts }) => {
+export const WritePage = ({ posts }) => {
   return (
     <>
       <NextSeo
@@ -20,8 +20,8 @@ export const WritePage = ({ allPosts }) => {
         <div className="prose dark:prose-dark prose-purple lg:prose-xl m-2 md:m-0">
           <h1>writes</h1>
         </div>
-        {allPosts.map((post, i) => (
-          <ListItem key={i} item={post} />
+        {posts.map((post, i) => (
+          <PostListItem key={i} item={post} />
         ))}
       </div>
     </>
@@ -29,10 +29,12 @@ export const WritePage = ({ allPosts }) => {
 };
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(['title', 'date', 'slug']);
+  const posts = (await getAllFilesFrontMatter('posts')).sort((a, b) =>
+    a.date > b.date ? '-1' : '1'
+  );
 
   return {
-    props: { allPosts },
+    props: { posts },
   };
 }
 

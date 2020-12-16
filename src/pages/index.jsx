@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 
-import { getAllPosts } from '../lib/posts';
 import Nav from '../components/nav';
-import ListItem from '../components/ListItem';
+import PostListItem from '../components/PostListItem';
 import MakeCard from '../components/MakeCard';
+import { getAllFilesFrontMatter } from '../lib/mdx';
 
-export default function IndexPage({ allPosts }) {
+export default function IndexPage({ allPosts, posts }) {
   return (
     <>
       <NextSeo
@@ -46,8 +46,8 @@ export default function IndexPage({ allPosts }) {
             <h1>Writes...</h1>
           </div>
           <div>
-            {allPosts.map((post, i) => (
-              <ListItem key={i} item={post} />
+            {posts.map((post, i) => (
+              <PostListItem key={i} item={post} />
             ))}
           </div>
         </section>
@@ -57,12 +57,11 @@ export default function IndexPage({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(['title', 'date', 'slug', 'excerpt']).slice(
-    0,
-    9
-  );
+  const posts = (await getAllFilesFrontMatter('posts'))
+    .sort((a, b) => (a.date > b.date ? '-1' : '1'))
+    .slice(0, 5);
 
   return {
-    props: { allPosts },
+    props: { posts },
   };
 }

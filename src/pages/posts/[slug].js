@@ -1,52 +1,42 @@
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
-
-import { getAllPosts, getPostBySlug } from '../../lib/posts';
-import markdownToHtml from '../../lib/markdown';
+import hydrate from 'next-mdx-remote/hydrate';
 
 import Nav from '../../components/nav';
+import { getFileBySlug, getFiles } from '../../lib/mdx';
+import MDXComponents from '../../components/MDXComponents';
 
-const PostTemplate = ({ post }) => {
+const PostTemplate = ({ mdxSource, frontMatter }) => {
+  const content = hydrate(mdxSource, { components: MDXComponents });
   return (
     <>
-      <NextSeo title={post.meta.title} />
+      <NextSeo title={frontMatter.title} />
       <Head>
-        <title>chris bailey (.) dev{post.meta.title}</title>
+        <title>chris bailey (.) dev{frontMatter.title}</title>
       </Head>
       <Nav />
       <article className="prose dark:prose-dark prose-purple lg:prose-xl m-2 mt-8 md:m-0 md:mx-auto md:mt-8">
-        <h1>{post.meta.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <h1>{frontMatter.title}</h1>
+        {content}
       </article>
     </>
   );
 };
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, ['title', 'date', 'slug', 'content']);
-  const content = await markdownToHtml(post.content || '');
-
-  return {
-    props: {
-      post: {
-        ...post,
-        content,
-      },
-    },
-  };
+  const post = await getFileBySlug('posts', params.slug);
+  return { props: post };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug']);
+  const posts = await getFiles('posts');
 
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
+    paths: posts.map((p) => ({
+      params: {
+        slug: p.replace(/\.mdx/, ''),
+      },
+    })),
     fallback: false,
   };
 }
