@@ -5,7 +5,7 @@ const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className=" px-5 py-5 font-semibold bg-gray-100 dark:bg-gray-900 shadow-md">
+    <nav className=" px-5 py-5 font-semibold bg-gray-100 dark:bg-gray-900 shadow-md sticky top-0">
       <div className="flex justify-between items-center">
         <Link href="/">
           <a className="text-xl uppercase text-purple-600 dark:text-purple-200 dark:hover:text-purple-400">
