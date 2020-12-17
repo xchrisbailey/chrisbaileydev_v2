@@ -59,9 +59,10 @@ export default function IndexPage({ allPosts, posts }) {
 export async function getStaticProps() {
   const posts = (await getAllFilesFrontMatter('posts'))
     .sort((a, b) => (a.date > b.date ? '-1' : '1'))
+    .filter((p) => p.published != false)
     .slice(0, 5);
 
   return {
-    props: { posts },
+    props: { posts }
   };
 }
