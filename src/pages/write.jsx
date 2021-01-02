@@ -29,12 +29,12 @@ export const WritePage = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  const posts = (await getAllFilesFrontMatter('posts')).sort((a, b) =>
-    a.date > b.date ? '-1' : '1'
-  );
+  const posts = (await getAllFilesFrontMatter('posts'))
+    .sort((a, b) => (a.date > b.date ? '-1' : '1'))
+    .filter((p) => p.published != false);
 
   return {
-    props: { posts },
+    props: { posts }
   };
 }
 
