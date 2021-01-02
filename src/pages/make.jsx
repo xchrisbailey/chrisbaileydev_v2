@@ -43,7 +43,7 @@ const Make = () => {
               desc="personal blog and portfolio, built with gatsby and styled components"
               date="August 10, 2020"
               github="https://github.com/xchrisbailey/chrisbailey.dev"
-              view="/make/chrisbaileydevv1.png"
+              view="https://lucid-jepsen-9867c9.netlify.app/"
             />
           </div>
         </section>
