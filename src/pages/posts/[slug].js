@@ -8,9 +8,14 @@ import MDXComponents from '../../components/MDXComponents';
 
 const PostTemplate = ({ mdxSource, frontMatter }) => {
   const content = hydrate(mdxSource, { components: MDXComponents });
+  console.log(frontMatter);
   return (
     <>
-      <NextSeo title={frontMatter.title} />
+      <NextSeo
+        title={frontMatter.title}
+        description={frontMatter.excerpt}
+        canonical={`https://chrisbailey.dev/posts/${frontMatter.slug}`}
+      />
       <Head>
         <title>chris bailey (.) dev{frontMatter.title}</title>
       </Head>
@@ -34,10 +39,10 @@ export async function getStaticPaths() {
   return {
     paths: posts.map((p) => ({
       params: {
-        slug: p.replace(/\.mdx/, ''),
-      },
+        slug: p.replace(/\.mdx/, '')
+      }
     })),
-    fallback: false,
+    fallback: false
   };
 }
 
