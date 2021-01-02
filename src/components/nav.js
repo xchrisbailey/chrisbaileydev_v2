@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { useState } from 'react';
+import Link from "next/link";
+import { useState } from "react";
 
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -32,12 +32,7 @@ const Nav = () => {
               stroke="currentColor"
               aria-hidden="true"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <svg
               className="hidden h-6 w-6"
@@ -47,21 +42,14 @@ const Nav = () => {
               stroke="currentColor"
               aria-hidden="true"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
       </div>
 
       {/* small nav links */}
-      <div className={`flex flex-col ${navOpen ? '' : 'hidden'} md:hidden`}>
-        {navLinks()}
-      </div>
+      <div className={`flex flex-col ${navOpen ? "" : "hidden"} md:hidden`}>{navLinks()}</div>
     </nav>
   );
 };
@@ -122,7 +110,7 @@ const navLinks = () => (
           d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
         />
       </svg>
-      <a href="#" className="nav-link">
+      <a href="/about" className="nav-link">
         LIFE
       </a>
     </div>
