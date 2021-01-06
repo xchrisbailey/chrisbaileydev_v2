@@ -8,7 +8,6 @@ import MDXComponents from '../../components/MDXComponents';
 
 const PostTemplate = ({ mdxSource, frontMatter }) => {
   const content = hydrate(mdxSource, { components: MDXComponents });
-  console.log(frontMatter);
   return (
     <>
       <NextSeo
