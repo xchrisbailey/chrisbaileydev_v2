@@ -3,12 +3,12 @@ import dayjs from 'dayjs';
 
 const PostListItem = ({ item }) => {
   return (
-    <div className="my-8 flex flex-col justify-between  border-b-2 border-gray-100 dark:border-gray-900">
+    <div className="flex flex-col justify-between my-8 border-b-2 border-gray-100  dark:border-gray-900">
       <div className="flex items-baseline">
         <Link href={`/posts/${item.slug}`}>
-          <a className="purple-link text-2xl font-bold mr-4">{item.title}</a>
+          <a className="mr-4 text-2xl font-bold purple-link">{item.title}</a>
         </Link>
-        <p className="text-gray-900 dark:text-gray-300 text-sm px-2">
+        <p className="px-2 text-sm text-gray-900 dark:text-gray-300">
           {dayjs(item.date).format('MMMM DD, YYYY')}{' '}
           <span className="px-3">☕️</span>
           {item.readingTime.text}

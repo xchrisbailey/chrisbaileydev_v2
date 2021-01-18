@@ -17,7 +17,7 @@ export const WritePage = ({ posts }) => {
       </Head>
       <Nav />
       <div className="container mx-auto mt-6 ">
-        <div className="prose dark:prose-dark prose-purple lg:prose-xl m-2 md:m-0">
+        <div className="m-2 prose dark:prose-dark prose-purple lg:prose-xl md:m-0">
           <h1>writes</h1>
         </div>
         {posts.map((post, i) => (

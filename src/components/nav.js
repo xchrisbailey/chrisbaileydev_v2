@@ -5,10 +5,10 @@ const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className=" px-5 py-5 font-semibold bg-gray-100 dark:bg-gray-900 shadow-md sticky top-0 z-50">
-      <div className="flex justify-between items-center">
+    <nav className="sticky top-0 z-50 px-5 py-5 font-semibold bg-gray-100 shadow-md  dark:bg-gray-900">
+      <div className="flex items-center justify-between">
         <Link href="/">
-          <a className="text-xl uppercase text-purple-600 dark:text-purple-200 dark:hover:text-purple-400">
+          <a className="text-xl text-purple-600 uppercase dark:text-purple-200 dark:hover:text-purple-400">
             chris bailey . dev
           </a>
         </Link>
@@ -19,13 +19,13 @@ const Nav = () => {
         {/* hamburger menu hidden md+ */}
         <div className="md:hidden">
           <button
-            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-expanded="false"
             onClick={() => setNavOpen(!navOpen)}
           >
             <span className="sr-only">Open main menu</span>
             <svg
-              className="block h-6 w-6"
+              className="block w-6 h-6"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -35,7 +35,7 @@ const Nav = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <svg
-              className="hidden h-6 w-6"
+              className="hidden w-6 h-6"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"

@@ -19,7 +19,7 @@ const PostTemplate = ({ mdxSource, frontMatter }) => {
         <title>chris bailey (.) dev{frontMatter.title}</title>
       </Head>
       <Nav />
-      <article className="prose dark:prose-dark prose-purple lg:prose-xl m-2 mt-8 md:m-0 md:mx-auto md:mt-8">
+      <article className="m-2 mt-8 prose dark:prose-dark prose-purple lg:prose-xl md:m-0 md:mx-auto md:mt-8">
         <h1>{frontMatter.title}</h1>
         {content}
       </article>

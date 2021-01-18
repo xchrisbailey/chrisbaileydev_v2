@@ -14,8 +14,8 @@ const About = () => {
         <title>chris bailey . dev | make</title>
       </Head>
       <Nav />
-      <section className="md:container md:mx-auto mt-6 mx-2 ">
-        <article className="prose dark:prose-dark prose-purple lg:prose-xl m-2 mt-8 md:m-0 md:mx-auto md:mt-8">
+      <section className="mx-2 mt-6 md:container md:mx-auto ">
+        <article className="m-2 mt-8 prose dark:prose-dark prose-purple lg:prose-xl md:m-0 md:mx-auto md:mt-8">
           <h1 className="uppercase">whoami</h1>
           <p>
             A thirty something late in life hopeful career switcher from the

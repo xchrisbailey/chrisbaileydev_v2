@@ -5,7 +5,7 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
     <div className="flex flex-wrap">
       <div className="w-full">
         <div className="bg-white dark:bg-gray-800 shadow-sm rounded-md">
-          <div className="h-56 overflow-hidden p-2">
+          <div className="h-56 p-2 overflow-hidden">
             <Image
               src={image}
               alt={title}
@@ -16,17 +16,17 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
             />
           </div>
           <div className="px-4 py-4 md:px-10">
-            <h1 className="font-bold text-lg text-black dark:text-white">
+            <h1 className="text-lg font-bold text-black dark:text-white">
               {title}
             </h1>
             <p className="py-4 text-black dark:text-white">{desc}</p>
-            <div className="flex justify-between flex-wrap pt-8">
-              <div className="w-full md:w-1/3 text-sm font-medium text-black dark:text-white">
+            <div className="flex flex-wrap justify-between pt-8">
+              <div className="w-full text-sm font-medium text-black md:w-1/3 dark:text-white">
                 {date}
               </div>
               <div className="2/3">
                 <div className="flex items-center justify-end text-sm font-medium">
-                  <div className="flex mr-4 items-center">
+                  <div className="flex items-center mr-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -45,7 +45,7 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
                       github
                     </a>
                   </div>
-                  <div className="flex mr-0 items-center">
+                  <div className="flex items-center mr-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

@@ -16,9 +16,9 @@ const Make = ({ projects }) => {
         <title>chris bailey . dev | make</title>
       </Head>
       <Nav />
-      <div className="md:container md:mx-auto mt-6 mx-2 ">
+      <div className="mx-2 mt-6 md:container md:mx-auto ">
         <section className="mb-10">
-          <div className="prose dark:prose-dark prose-purple lg:prose-xl mb-8">
+          <div className="mb-8 prose dark:prose-dark prose-purple lg:prose-xl">
             <h1>make</h1>
           </div>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
