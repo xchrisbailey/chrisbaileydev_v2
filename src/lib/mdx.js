@@ -24,11 +24,7 @@ export async function getFileBySlug(type, slug) {
   const mdxSource = await renderToString(content, {
     components: MDXComponents,
     mdxOptions: {
-      remarkPlugins: [
-        require('remark-autolink-headings'),
-        require('remark-slug'),
-        require('remark-code-titles'),
-      ],
+      remarkPlugins: [require('remark-autolink-headings'), require('remark-slug'), require('remark-code-titles')],
       rehypePlugins: [mdxPrism],
     },
   });
@@ -48,10 +44,7 @@ export async function getAllFilesFrontMatter(type) {
   const files = fs.readdirSync(path.join(root, 'content', type));
 
   return files.reduce((allPosts, postSlug) => {
-    const source = fs.readFileSync(
-      path.join(root, 'content', type, postSlug),
-      'utf8'
-    );
+    const source = fs.readFileSync(path.join(root, 'content', type, postSlug), 'utf8');
     const { data, content } = matter(source);
 
     return [

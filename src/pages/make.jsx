@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
+import { getAllFilesFrontMatter } from '../lib/mdx';
 
 import Nav from '../components/nav';
 import MakeCard from '../components/MakeCard';
 
-const Make = () => {
+const Make = ({ projects }) => {
   return (
     <>
       <NextSeo
@@ -21,35 +22,28 @@ const Make = () => {
             <h1>make</h1>
           </div>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
-            <MakeCard
-              image="/make/tcloc.png"
-              title="Toni and Chris Location Notebook"
-              desc="notebook of possible locations for residency.  built using nextjs, typescript, vercel and sanity.io"
-              date="September 20, 2020"
-              github="https://github.com/xchrisbailey/tcloc"
-              view="https://tcloc.vercel.app/"
-            />
-            <MakeCard
-              image="/make/chrisbaileydevv2.png"
-              title="chrisbailey.dev v2"
-              desc="personal blog and portfolio, built with nextjs and tailwindcss"
-              date="December 1, 2020"
-              github="https://github.com/xchrisbailey/chrisbaileydev_v2"
-              view="https://chrisbailey.dev"
-            />
-            <MakeCard
-              image="/make/chrisbaileydevv1.png"
-              title="chrisbailey.dev v1"
-              desc="personal blog and portfolio, built with gatsby and styled components"
-              date="August 10, 2020"
-              github="https://github.com/xchrisbailey/chrisbailey.dev"
-              view="https://lucid-jepsen-9867c9.netlify.app/"
-            />
+            {projects.map(project => (
+              <MakeCard
+                key={project.title}
+                image={project.image}
+                title={project.title}
+                desc={project.description}
+                date={project.date}
+                github={project.github}
+                view={project.url}
+              />
+            ))}
           </div>
         </section>
       </div>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const projects = (await getAllFilesFrontMatter('projects')).sort((a, b) => (a.date > b.date ? '-1' : '1'));
+
+  return { props: { projects } };
+}
 
 export default Make;

@@ -6,7 +6,7 @@ import PostListItem from '../components/PostListItem';
 import MakeCard from '../components/MakeCard';
 import { getAllFilesFrontMatter } from '../lib/mdx';
 
-export default function IndexPage({ allPosts, posts }) {
+export default function IndexPage({ projects, posts }) {
   return (
     <>
       <NextSeo
@@ -23,33 +23,24 @@ export default function IndexPage({ allPosts, posts }) {
             <h1>makes...</h1>
           </div>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
-            <MakeCard
-              image="/make/tcloc.png"
-              title="Toni and Chris Location Notebook"
-              desc="notebook of possible locations for residency.  built using nextjs, typescript, vercel and sanity.io"
-              date="September 20, 2020"
-              github="https://github.com/xchrisbailey/tcloc"
-              view="https://tcloc.vercel.app/"
-            />
-            <MakeCard
-              image="/make/chrisbaileydevv2.png"
-              title="chrisbailey.dev v2"
-              desc="personal blog and portfolio, built with nextjs and tailwindcss"
-              date="December 1, 2020"
-              github="https://github.com/xchrisbailey/chrisbaileydev_v2"
-              view="https://chrisbailey.dev"
-            />
+            {projects.map(project => (
+              <MakeCard
+                key={project.title}
+                image={project.image}
+                title={project.title}
+                desc={project.description}
+                date={project.date}
+                github={project.github}
+                view={project.url}
+              />
+            ))}
           </div>
         </section>
         <section className="m-2 md:m-0">
           <div className="prose dark:prose-dark prose-purple lg:prose-xl">
             <h1>Writes...</h1>
           </div>
-          <div>
-            {posts.map((post, i) => (
-              <PostListItem key={i} item={post} />
-            ))}
-          </div>
+          <div>{posts.map((post, i) => <PostListItem key={i} item={post} />)}</div>
         </section>
       </div>
     </>
@@ -57,12 +48,16 @@ export default function IndexPage({ allPosts, posts }) {
 }
 
 export async function getStaticProps() {
+  const projects = (await getAllFilesFrontMatter('projects'))
+    .sort((a, b) => (a.date > b.date ? '-1' : '1'))
+    .slice(0, 2);
+
   const posts = (await getAllFilesFrontMatter('posts'))
     .sort((a, b) => (a.date > b.date ? '-1' : '1'))
-    .filter((p) => p.published != false)
+    .filter(p => p.published != false)
     .slice(0, 5);
 
   return {
-    props: { posts }
+    props: { posts, projects },
   };
 }
