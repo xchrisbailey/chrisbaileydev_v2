@@ -8,7 +8,7 @@
 
 /* Write your own custom component styles here */
 .github-icon {
-  @apply h-5 w-5 mr-1 text-green-500 dark:text-green-300;
+  @apply w-5 h-5 mr-1 text-green-500 dark:text-green-300;
 }
 
 .github-link {
@@ -16,7 +16,7 @@
 }
 
 .view-icon {
-  @apply h-5 w-5 mr-1 text-blue-500 dark:text-blue-300;
+  @apply w-5 h-5 mr-1 text-blue-500 dark:text-blue-300;
 }
 .view-link {
   @apply text-blue-500 dark:text-blue-300 hover:underline;
@@ -27,15 +27,15 @@
 }
 
 .nav-item {
-  @apply flex p-0 m-0 items-center justify-start px-3 py-2;
+  @apply flex items-center justify-start p-0 px-3 py-2 m-0;
 }
 
 .nav-link {
-  @apply rounded-md text-sm font-medium text-black dark:text-white hover:underline;
+  @apply text-sm font-medium text-black rounded-md dark:text-white hover:underline;
 }
 
 .nav-icon {
-  @apply h-4 w-4 mr-1 dark:text-white text-black;
+  @apply w-4 h-4 mr-1 text-black dark:text-white;
 }
 /* Start purging... */
 @tailwind utilities;
