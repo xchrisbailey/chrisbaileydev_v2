@@ -1,10 +1,22 @@
 module.exports = {
-  purge: [
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-  ],
+  purge: ['./src/components/**/*.{js,ts,jsx,tsx}', './src/pages/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'media', // 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: [
+        'Rubik',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'avenir',
+        "'helvetica neue'",
+        'helvetica',
+        'Ubuntu',
+        'roboto',
+        'noto',
+        'arial',
+        'sans-serif',
+      ],
+    },
     extend: {
       colors: {
         'accent-1': '#333',
