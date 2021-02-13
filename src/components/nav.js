@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { useState } from "react";
+import Link from 'next/link';
+import { useState } from 'react';
 
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 px-5 py-5 font-semibold bg-gray-100 shadow-md  dark:bg-gray-900">
+    <nav className="sticky top-0 z-50 px-5 py-4 font-semibold bg-gray-100 shadow-md  dark:bg-gray-900">
       <div className="flex items-center justify-between">
         <Link href="/">
           <a className="text-xl text-purple-600 uppercase dark:text-purple-200 dark:hover:text-purple-400">
@@ -21,8 +21,7 @@ const Nav = () => {
           <button
             className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-expanded="false"
-            onClick={() => setNavOpen(!navOpen)}
-          >
+            onClick={() => setNavOpen(!navOpen)}>
             <span className="sr-only">Open main menu</span>
             <svg
               className="block w-6 h-6"
@@ -30,8 +29,7 @@ const Nav = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <svg
@@ -40,8 +38,7 @@ const Nav = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -49,7 +46,7 @@ const Nav = () => {
       </div>
 
       {/* small nav links */}
-      <div className={`flex flex-col ${navOpen ? "" : "hidden"} md:hidden`}>{navLinks()}</div>
+      <div className={`flex flex-col ${navOpen ? '' : 'hidden'} md:hidden`}>{navLinks()}</div>
     </nav>
   );
 };
@@ -62,8 +59,7 @@ const navLinks = () => (
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        className="nav-icon"
-      >
+        className="nav-icon">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -81,8 +77,7 @@ const navLinks = () => (
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        className="nav-icon"
-      >
+        className="nav-icon">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -101,8 +96,7 @@ const navLinks = () => (
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        className="nav-icon"
-      >
+        className="nav-icon">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"

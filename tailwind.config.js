@@ -36,7 +36,6 @@ module.exports = {
             },
             h2: {
               color: theme('colors.purple.700'),
-              borderBottom: `3px solid ${theme('colors.purple.700')}`,
             },
             h3: {
               color: theme('colors.purple.700'),
@@ -58,7 +57,6 @@ module.exports = {
             },
             h2: {
               color: theme('colors.purple.300'),
-              borderBottom: `3px solid ${theme('colors.purple.300')}`,
             },
             code: {
               color: theme('colors.purple.300'),
