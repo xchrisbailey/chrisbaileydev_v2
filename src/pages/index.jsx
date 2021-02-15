@@ -17,8 +17,8 @@ export default function IndexPage({ posts }) {
         <title>chris bailey . dev</title>
       </Head>
       <Nav />
-      <div className="container mx-auto mt-6 ">
-        <section className="mb-5 md:m-0 md:mb-14">
+      <div className="container mx-auto mt-6 px-2 md:px-0">
+        <section className="mb-8 md:m-0 md:mb-14">
           <div className="mb-2 prose dark:prose-dark prose-purple lg:prose-xl">
             <h1>chris bailey</h1>
           </div>
