@@ -22,7 +22,7 @@ const Make = ({ projects }) => {
             <h1>make</h1>
           </div>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
-            {projects.map(project => (
+            {projects.map((project) => (
               <MakeCard
                 key={project.title}
                 image={project.image}
