@@ -35,13 +35,13 @@ export default function IndexPage() {
           </p>
           <nav className="flex items-center justify-center mt-10 text-3xl">
             <Link href="/write">
-              <a className="text-green-600 dark:text-green-300 hover:underline tracking-widest">
+              <a className="tracking-widest text-green-600 dark:text-green-300 hover:underline">
                 write
               </a>
             </Link>
             <p className="mx-5 text-gray-600 dark:text-gray-300">&times;</p>
             <Link href="/make">
-              <a className="text-pink-600 dark:text-pink-300 hover:underline tracking-widest">
+              <a className="tracking-widest text-pink-600 dark:text-pink-300 hover:underline">
                 make
               </a>
             </Link>

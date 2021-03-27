@@ -5,10 +5,10 @@ const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 px-5 py-4 font-semibold bg-trueGray-100 shadow  dark:bg-trueGray-900">
+    <nav className="sticky top-0 z-50 px-5 py-4 font-semibold shadow bg-trueGray-100  dark:bg-trueGray-900">
       <div className="flex items-center justify-between">
         <Link href="/">
-          <a className="text-xl font-medium text-indigo-600 hover:text-indigo-700 uppercase dark:text-indigo-200 dark:hover:text-indigo-400">
+          <a className="text-xl font-medium text-indigo-600 uppercase hover:text-indigo-700 dark:text-indigo-200 dark:hover:text-indigo-400">
             chris <em>bailey</em> . dev
           </a>
         </Link>
@@ -68,17 +68,17 @@ const Nav = () => {
 
 const navLinks = () => (
   <>
-    <div className="mr-5 flex flex-col md:flex-row">
+    <div className="flex flex-col mr-5 md:flex-row">
       <Link href="/write">
-        <a className="text-lg font-medium text-black dark:text-indigo-300 dark:hover:text-indigo-400 text-indigo-600 hover:text-indigo-700 tracking-widest">
+        <a className="text-lg font-medium tracking-widest text-black text-indigo-600 dark:text-indigo-300 dark:hover:text-indigo-400 hover:text-indigo-700">
           WRITE
         </a>
       </Link>
-      <div className="hidden md:block text-lg font-medium text-black dark:text-white mx-5">
+      <div className="hidden mx-5 text-lg font-medium text-black md:block dark:text-white">
         &times;
       </div>
       <Link href="/make">
-        <a className="text-lg font-medium text-black dark:text-pink-300 dark:hover:text-pink-400  text-pink-600 hover:text-pink-700 tracking-widest">
+        <a className="text-lg font-medium tracking-widest text-black text-pink-600 dark:text-pink-300 dark:hover:text-pink-400  hover:text-pink-700">
           MAKE
         </a>
       </Link>

@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const MakeCard = ({ image, title, desc, date, github, view }) => {
   return (
-    <article className="flex flex-col bg-white dark:bg-gray-800 shadow-sm rounded-md h-full w-full">
-      <section className="h-56 p-2 overflow-hidden flex-grow">
+    <article className="flex flex-col w-full h-full bg-white dark:bg-gray-800 shadow-sm rounded-md">
+      <section className="flex-grow h-56 p-2 overflow-hidden">
         <Image
           src={image}
           alt={title}
@@ -13,13 +13,13 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
           layout="responsive"
         />
       </section>
-      <section className="px-4 py-4 md:px-10 flex-grow">
+      <section className="flex-grow px-4 py-4 md:px-10">
         <h1 className="text-lg font-bold text-black dark:text-white">
           {title}
         </h1>
         <p className="py-4 text-black dark:text-white">{desc}</p>
       </section>
-      <section className="flex flex-wrap justify-between pt-8 flex-grow0 px-4 py-4">
+      <section className="flex flex-wrap justify-between px-4 py-4 pt-8 flex-grow0">
         <div className="w-full text-sm font-medium text-black md:w-1/3 dark:text-white">
           {date}
         </div>
