@@ -1,12 +1,7 @@
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
-import Link from 'next/link';
 
-import Nav from '../components/nav';
-import PostListItem from '../components/PostListItem';
-import { getAllFilesFrontMatter } from '../lib/mdx';
-
-export default function IndexPage({ posts }) {
+export default function IndexPage() {
   return (
     <>
       <NextSeo
@@ -16,44 +11,43 @@ export default function IndexPage({ posts }) {
       <Head>
         <title>chris bailey . dev</title>
       </Head>
-      <Nav />
-      <div className="container mx-auto mt-6 px-2 md:px-0">
-        <section className="mb-8 md:m-0 md:mb-20">
-          <div className="mb-2 prose dark:prose-dark prose-purple lg:prose-xl">
+      <section className="flex h-screen mx-2 md:mx-auto items-center justify-center flex-col">
+        <div className="flex justify-start flex-col">
+          <div className="prose dark:prose-dark prose-purple lg:prose-xl">
             <h1>chris bailey</h1>
           </div>
           <p className="text-xl text-black dark:text-white">
-            Full stack <strong className="text-yellow-600 dark:text-yellow-300">web developer</strong> from Michigan
-            with a foundness for
-            <br /> <strong className="text-pink-600 dark:text-pink-300">goldendoodles</strong>,{' '}
-            <strong className="text-pink-600 dark:text-pink-300">border collies</strong> and <em>tennis</em>.
+            Full stack{' '}
+            <strong className="text-yellow-600 dark:text-yellow-300">
+              web developer
+            </strong>{' '}
+            from Michigan with a foundness for
+            <br />{' '}
+            <strong className="text-pink-600 dark:text-pink-300">
+              goldendoodles
+            </strong>,{' '}
+            <strong className="text-indigo-600 dark:text-indigo-300">
+              border collies
+            </strong>{' '}
+            and <em>tennis</em>.
           </p>
-        </section>
-        <section className="md:m-0">
-          <div className="mb-2 prose dark:prose-dark prose-purple lg:prose-xl">
-            <h1>Writes..</h1>
-          </div>
-          <div>
-            {posts.map((post, i) => (
-              <PostListItem key={i} item={post} />
-            ))}
-            <Link href="write">
-              <a className="text-purple-500 underline">more...</a>
-            </Link>
-          </div>
-        </section>
-      </div>
+          <nav className="text-3xl mt-10 flex justify-center items-center">
+            <a
+              href="/write"
+              className="text-green-600 dark:text-green-300 hover:underline"
+            >
+              write
+            </a>
+            <p className="mx-5 text-gray-600 dark:text-gray-300">&times;</p>
+            <a
+              href="/make"
+              className="text-pink-600 dark:text-pink-300 hover:underline"
+            >
+              make
+            </a>
+          </nav>
+        </div>
+      </section>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const posts = (await getAllFilesFrontMatter('posts'))
-    .sort((a, b) => (a.date > b.date ? '-1' : '1'))
-    .filter((p) => p.published != false)
-    .slice(0, 7);
-
-  return {
-    props: { posts },
-  };
 }
