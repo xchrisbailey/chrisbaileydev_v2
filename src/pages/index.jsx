@@ -23,10 +23,19 @@ export default function IndexPage({ posts }) {
             <h1>chris bailey</h1>
           </div>
           <p className="text-xl text-black dark:text-white">
-            Full stack <strong className="text-yellow-600 dark:text-yellow-300">web developer</strong> from Michigan
-            with a foundness for
-            <br /> <strong className="text-pink-600 dark:text-pink-300">goldendoodles</strong>,{' '}
-            <strong className="text-pink-600 dark:text-pink-300">border collies</strong> and <em>tennis</em>.
+            Full stack{' '}
+            <strong className="text-yellow-600 dark:text-yellow-300">
+              web developer
+            </strong>{' '}
+            from Michigan with a fondness for
+            <br />{' '}
+            <strong className="text-pink-600 dark:text-pink-300">
+              goldendoodles
+            </strong>,{' '}
+            <strong className="text-pink-600 dark:text-pink-300">
+              border collies
+            </strong>{' '}
+            and <em>tennis</em>.
           </p>
         </section>
         <section className="md:m-0">
@@ -34,9 +43,7 @@ export default function IndexPage({ posts }) {
             <h1>Writes..</h1>
           </div>
           <div>
-            {posts.map((post, i) => (
-              <PostListItem key={i} item={post} />
-            ))}
+            {posts.map((post, i) => <PostListItem key={i} item={post} />)}
             <Link href="write">
               <a className="text-purple-500 underline">more...</a>
             </Link>
@@ -54,6 +61,6 @@ export async function getStaticProps() {
     .slice(0, 7);
 
   return {
-    props: { posts },
+    props: { posts }
   };
 }
