@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
+import Link from 'next/link';
 
 export default function IndexPage() {
   return (
@@ -33,19 +34,17 @@ export default function IndexPage() {
             and <em>tennis</em>.
           </p>
           <nav className="flex items-center justify-center mt-10 text-3xl">
-            <a
-              href="/write"
-              className="text-green-600 dark:text-green-300 hover:underline"
-            >
-              write
-            </a>
+            <Link href="/write">
+              <a className="text-green-600 dark:text-green-300 hover:underline tracking-widest">
+                write
+              </a>
+            </Link>
             <p className="mx-5 text-gray-600 dark:text-gray-300">&times;</p>
-            <a
-              href="/make"
-              className="text-pink-600 dark:text-pink-300 hover:underline"
-            >
-              make
-            </a>
+            <Link href="/make">
+              <a className="text-pink-600 dark:text-pink-300 hover:underline tracking-widest">
+                make
+              </a>
+            </Link>
           </nav>
         </div>
       </section>

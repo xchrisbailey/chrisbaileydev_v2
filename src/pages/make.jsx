@@ -18,9 +18,9 @@ const Make = ({ projects }) => {
       <Nav />
       <div className="mx-2 mt-6 md:container md:mx-auto ">
         <section className="mb-10">
-          <div className="mb-8 prose dark:prose-dark prose-purple lg:prose-xl">
-            <h1>make</h1>
-          </div>
+          <h1 className="text-5xl font-bold uppercase text-indigo-600 dark:text-indigo-300 mb-2">
+            make
+          </h1>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
             {projects.map((project) => (
               <MakeCard
@@ -41,7 +41,9 @@ const Make = ({ projects }) => {
 };
 
 export async function getStaticProps() {
-  const projects = (await getAllFilesFrontMatter('projects')).sort((a, b) => (a.date > b.date ? '-1' : '1'));
+  const projects = (await getAllFilesFrontMatter('projects')).sort(
+    (a, b) => (a.date > b.date ? '-1' : '1')
+  );
 
   return { props: { projects } };
 }
