@@ -16,14 +16,14 @@ export const WritePage = ({ posts }) => {
         <title>chris bailey . dev | writes</title>
       </Head>
       <Nav />
-      <div className="container mx-auto mt-6 ">
-        <div className="m-2 prose dark:prose-dark prose-purple lg:prose-xl md:m-0">
-          <h1>writes</h1>
-        </div>
+      <section className="container mx-2 my-6 md:mx-auto">
+        <h1 className="mb-4 text-5xl font-bold text-purple-600 uppercase dark:text-purple-300">
+          writes
+        </h1>
         {posts.map((post, i) => (
           <PostListItem key={i} item={post} />
         ))}
-      </div>
+      </section>
     </>
   );
 };
