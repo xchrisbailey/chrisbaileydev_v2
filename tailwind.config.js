@@ -45,10 +45,13 @@ module.exports = {
               color: theme('colors.purple.700')
             },
             h3: {
-              color: theme('colors.purple.700')
+              color: theme('colors.indigo.700')
             },
             h4: {
-              color: theme('colors.purple.700')
+              color: theme('colors.pink.700')
+            },
+            code: {
+              color: theme('colors.pink.700')
             }
           }
         },
@@ -71,8 +74,14 @@ module.exports = {
             h2: {
               color: theme('colors.purple.300')
             },
+            h3: {
+              color: theme('colors.indigo.300')
+            },
+            h4: {
+              color: theme('colors.pink.300')
+            },
             code: {
-              color: theme('colors.purple.300')
+              color: theme('colors.pink.300')
             },
             blockquote: {
               color: theme('colors.grey.500'),
