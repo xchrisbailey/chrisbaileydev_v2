@@ -9,8 +9,9 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
           alt={title}
           width="400"
           height="400"
-          objectFit="cover"
+          objectFit="fill"
           layout="responsive"
+          className="rounded-t-md"
         />
       </section>
       <section className="flex-grow px-4 py-4 md:px-10">
