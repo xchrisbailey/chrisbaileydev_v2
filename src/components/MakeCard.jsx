@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const MakeCard = ({ image, title, desc, date, github, view }) => {
   return (
-    <article className="flex flex-col w-full h-full bg-white dark:bg-gray-800 shadow-sm rounded-md">
+    <article className="flex flex-col w-full h-full bg-white rounded-md shadow-sm dark:bg-gray-800">
       <section className="flex-grow h-56 p-2 overflow-hidden">
         <Image
           src={image}

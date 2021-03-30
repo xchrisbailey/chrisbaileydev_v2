@@ -17,7 +17,7 @@ export const WritePage = ({ posts }) => {
       </Head>
       <Nav />
       <section className="container mx-2 my-6 md:mx-auto">
-        <h1 className="mb-2 text-5xl font-bold text-pink-600 uppercase dark:text-pink-300">
+        <h1 className="mb-4 text-5xl font-bold text-purple-600 uppercase dark:text-purple-300">
           writes
         </h1>
         {posts.map((post, i) => (

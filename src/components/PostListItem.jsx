@@ -7,7 +7,9 @@ const PostListItem = ({ item }) => {
       <div className="flex flex-col items-baseline justify-between">
         <h2>
           <Link href={`/posts/${item.slug}`}>
-            <a className="text-2xl font-bold purple-link">{item.title}</a>
+            <a className="text-2xl font-bold text-pink-600 transition duration-100 ease-in-out dark:text-pink-300 hover:text-pink-700 dark:hover:text-pink-400">
+              {item.title}
+            </a>
           </Link>
         </h2>
         <h3 className="text-sm text-gray-900 dark:text-gray-300">

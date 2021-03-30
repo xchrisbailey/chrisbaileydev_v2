@@ -31,7 +31,7 @@
 }
 
 .nav-link {
-  @apply font-medium text-black rounded-md dark:text-white hover:underline tracking-widest;
+  @apply font-medium tracking-widest text-black rounded-md dark:text-white hover:underline;
 }
 
 .nav-icon {

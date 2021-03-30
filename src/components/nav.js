@@ -5,16 +5,17 @@ const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 px-5 py-4 font-semibold shadow bg-trueGray-100  dark:bg-trueGray-900">
+    <nav className="sticky top-0 z-50 px-5 py-4 font-semibold bg-gray-100 shadow dark:bg-gray-900">
       <div className="flex items-center justify-between">
         <Link href="/">
-          <a className="text-xl font-medium text-indigo-600 uppercase hover:text-indigo-700 dark:text-indigo-200 dark:hover:text-indigo-400">
-            chris <em>bailey</em> . dev
+          <a className="text-xl font-medium text-indigo-600 uppercase transition duration-200 ease-in-out hover:text-indigo-700 dark:text-indigo-200 dark:hover:text-indigo-400">
+            chris <em className="text-pink-600 dark:text-pink-300">bailey</em> .
+            dev
           </a>
         </Link>
 
         {/* md+ nav links */}
-        <div className="hidden md:flex space-x-4">{navLinks()}</div>
+        <div className="hidden space-x-4 md:flex">{navLinks()}</div>
 
         {/* hamburger menu hidden md+ */}
         <div className="md:hidden">
@@ -68,9 +69,9 @@ const Nav = () => {
 
 const navLinks = () => (
   <>
-    <div className="flex flex-col mr-5 md:flex-row">
+    <div className="flex flex-col mt-2 mr-5 transition duration-200 ease-in-out md:mt-0 md:flex-row">
       <Link href="/write">
-        <a className="text-lg font-medium tracking-widest text-black text-indigo-600 dark:text-indigo-300 dark:hover:text-indigo-400 hover:text-indigo-700">
+        <a className="text-2xl font-medium tracking-widest text-black text-indigo-600 transition duration-100 ease-in-out transform md:text-lg dark:text-indigo-300 dark:hover:text-indigo-400 hover:text-indigo-700 md:hover:rotate-3">
           WRITE
         </a>
       </Link>
@@ -78,7 +79,7 @@ const navLinks = () => (
         &times;
       </div>
       <Link href="/make">
-        <a className="text-lg font-medium tracking-widest text-black text-pink-600 dark:text-pink-300 dark:hover:text-pink-400  hover:text-pink-700">
+        <a className="mt-2 text-2xl font-medium tracking-widest text-black text-pink-600 transition duration-100 ease-in-out transform md:text-lg md:mt-0 dark:text-pink-300 dark:hover:text-pink-400 hover:text-pink-700 md:hover:-rotate-3">
           MAKE
         </a>
       </Link>

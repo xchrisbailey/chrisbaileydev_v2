@@ -25,15 +25,16 @@ module.exports = {
     extend: {
       colors: {
         'accent-1': '#333',
-        trueGray: colors.trueGray
+        trueGray: colors.trueGray,
+        coolGray: colors.coolGray
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             a: {
-              color: theme('colors.purple.700'),
+              color: theme('colors.pink.600'),
               '&:hover': {
-                color: theme('colors.purple.900')
+                color: theme('colors.pink.700')
               }
             },
             h1: {
@@ -56,6 +57,12 @@ module.exports = {
             color: theme('colors.white'),
             p: {
               color: theme('colors.white')
+            },
+            a: {
+              color: theme('colors.pink.300'),
+              '&:hover': {
+                color: theme('colors.pink.500')
+              }
             },
             h1: {
               color: theme('colors.yellow.300'),
