@@ -19,11 +19,11 @@ export default function IndexPage() {
           </h1>
           <p className="text-lg text-black dark:text-white">
             Full stack{' '}
-            <strong className="text-yellow-600 dark:text-yellow-300">
+            <strong className="text-yellow-700 dark:text-yellow-300">
               web developer
             </strong>{' '}
             focusing on{' '}
-            <em className="text-pink-600 dark:text-pink-300">React</em>, and{' '}
+            <em className="text-pink-700 dark:text-pink-300">React</em>, and{' '}
             <strong className="text-purple-600 dark:text-purple-300">
               Node
             </strong>
@@ -31,11 +31,11 @@ export default function IndexPage() {
           </p>
           <p className="text-lg text-black dark:text-white">
             Michigan based with a fondness for{' '}
-            <strong className="text-pink-600 dark:text-pink-300">
+            <strong className="text-pink-700 dark:text-pink-300">
               golden doodles
             </strong>
             ,{' '}
-            <strong className="text-indigo-600 dark:text-indigo-300">
+            <strong className="text-indigo-700 dark:text-indigo-300">
               border collies
             </strong>{' '}
             and <em>tennis</em>.

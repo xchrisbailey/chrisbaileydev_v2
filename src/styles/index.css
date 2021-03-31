@@ -8,18 +8,18 @@
 
 /* Write your own custom component styles here */
 .github-icon {
-  @apply w-5 h-5 mr-1 text-green-500 dark:text-green-300;
+  @apply w-5 h-5 mr-1 text-green-700 dark:text-green-300;
 }
 
 .github-link {
-  @apply text-green-500 dark:text-green-300 hover:underline;
+  @apply text-green-700 dark:text-green-300 hover:underline;
 }
 
 .view-icon {
-  @apply w-5 h-5 mr-1 text-blue-500 dark:text-blue-300;
+  @apply w-5 h-5 mr-1 text-blue-700 dark:text-blue-300;
 }
 .view-link {
-  @apply text-blue-500 dark:text-blue-300 hover:underline;
+  @apply text-blue-700 dark:text-blue-300 hover:underline;
 }
 
 .purple-link {

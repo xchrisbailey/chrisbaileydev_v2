@@ -15,15 +15,18 @@ const MakeCard = ({ image, title, desc, date, github, view }) => {
         />
       </section>
       <section className="flex-grow px-4 py-4 md:px-10">
-        <h1 className="text-lg font-bold text-black dark:text-white">
+        <h1 className="text-lg font-bold text-indigo-700 dark:text-indigo-300">
           {title}
         </h1>
         <p className="py-4 text-black dark:text-white">{desc}</p>
       </section>
       <section className="flex flex-wrap justify-between px-4 py-4 pt-8 flex-grow0">
-        <div className="w-full text-sm font-medium text-black md:w-1/3 dark:text-white">
+        <time
+          dateTime={date}
+          className="w-full text-sm font-medium text-black md:w-1/3 dark:text-white"
+        >
           {date}
-        </div>
+        </time>
         <div className="2/3">
           <div className="flex items-center justify-end text-sm font-medium">
             <div className="flex items-center mr-4">
