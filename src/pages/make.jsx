@@ -42,7 +42,7 @@ const Make = ({ projects }) => {
 
 export async function getStaticProps() {
   const projects = (await getAllFilesFrontMatter('projects')).sort((a, b) =>
-    a.date > b.date ? '-1' : '1'
+    Date.parse(a.date) > Date.parse(b.date) ? '-1' : '1'
   );
 
   return { props: { projects } };
