@@ -1,13 +1,12 @@
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
-import hydrate from 'next-mdx-remote/hydrate';
+import { MDXRemote } from 'next-mdx-remote';
 
 import Nav from '../../components/nav';
 import { getFileBySlug, getFiles } from '../../lib/mdx';
 import MDXComponents from '../../components/MDXComponents';
 
 const PostTemplate = ({ mdxSource, frontMatter }) => {
-  const content = hydrate(mdxSource, { components: MDXComponents });
   return (
     <>
       <NextSeo
@@ -21,7 +20,7 @@ const PostTemplate = ({ mdxSource, frontMatter }) => {
       <Nav />
       <article className="m-2 mt-8 prose dark:prose-dark prose-purple lg:prose-xl md:m-0 md:mx-auto md:mt-8">
         <h1>{frontMatter.title}</h1>
-        {content}
+        <MDXRemote {...mdxSource} />
       </article>
     </>
   );
